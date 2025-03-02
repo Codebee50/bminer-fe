@@ -39,15 +39,37 @@ const MiningPlanCard = () => {
 
       <div className="bg-transparent border border-grey300 rounded-[8px] flex flex-row justify-between py-[11px] px-[11px]">
         <div className="border-r borde-r-grey300 flex-[1_1]">
-            <p className="text-[14px] text-darkmuted font-medium">1-month</p>
+          <p className="text-[14px] text-darkmuted font-medium">1-month</p>
         </div>
         <div className="flex-[1_1]">
-            <p className="text-[14px] text-textgrey text-center font-medium">50 th/s</p>
+          <p className="text-[14px] text-textgrey text-center font-medium">
+            50 th/s
+          </p>
         </div>
       </div>
 
       <div className="flex items-center gap-[10px]">
-            <input type="range" name="" min={0} max={99} step={1} defaultValue={0} className="h-[34px] appearance-none w-full" id="" />
+        <input
+          type="range"
+          name=""
+          min={0}
+          max={99}
+          step={1}
+          defaultValue={0}
+          className="w-full appearance-none bg-grey300 h-[5px] rounded-lg 
+                [&::-webkit-slider-thumb]:appearance-none 
+                [&::-webkit-slider-thumb]:w-3
+                [&::-webkit-slider-thumb]:h-3 
+                [&::-webkit-slider-thumb]:bg-brightyellow 
+                [&::-webkit-slider-thumb]:rounded-full 
+                [&::-webkit-slider-thumb]:cursor-pointer 
+                [&::-moz-range-thumb]:w-3 
+                [&::-moz-range-thumb]:h-3 
+                [&::-moz-range-thumb]:bg-brightyellow
+                [&::-moz-range-thumb]:rounded-full 
+                [&::-moz-range-thumb]:cursor-pointer"
+          id=""
+        />
       </div>
     </div>
   );
