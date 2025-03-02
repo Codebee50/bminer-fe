@@ -47,7 +47,7 @@ const MiningPlanCard = () => {
       </div>
 
       <div className="flex items-center gap-[10px]">
-            <input type="range" name="" min={0} max={99} step={1} value={0} className="h-[34px] appearance-none w-full" id="" />
+            <input type="range" name="" min={0} max={99} step={1} defaultValue={0} className="h-[34px] appearance-none w-full" id="" />
       </div>
     </div>
   );

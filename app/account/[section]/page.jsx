@@ -30,12 +30,12 @@ const getSection = (currentSection) => {
 const Page = () => {
   const { section } = useParams();
   const primaryMenuItems = [
-    { id: 1, name: "My accounts", icon: HiOutlineUser, path: "/accounts" },
+    { id: 1, name: "My accounts", icon: HiOutlineUser, path: "/account/home" },
     {
       id: 2,
       name: "Buy hashpower",
       icon: TiTag,
-      path: "/buy-hashpower",
+      path: "/account/buy-hashpower",
     },
     { id: 3, name: "Demo Mining", icon: FaChartLine, path: "/demo-mining" },
     {
@@ -96,7 +96,7 @@ const Page = () => {
                       href={menuItem.path}
                     >
                       <menuItem.icon />
-                      <p>{menuItem.name}</p>
+                      <p className="whitespace-nowrap">{menuItem.name}</p>
                     </a>
                   );
                 })}
@@ -115,11 +115,11 @@ const Page = () => {
                   return (
                     <a
                       className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
-                      key={menuItem.name}
+                      key={`nav-item-${menuItem.name}`}
                       href={menuItem.path}
                     >
                       <menuItem.icon />
-                      <p>{menuItem.name}</p>
+                      <p className="whitespace-nowrap">{menuItem.name}</p>
                     </a>
                   );
                 })}
