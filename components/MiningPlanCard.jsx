@@ -18,10 +18,22 @@ const MiningPlanCard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 items-center w-max gap-[14px] mb-[8px] min-h-[31px]">
-            <p className="text-[24px] font-bold text-left text-darkmuted">$74</p>
-            <div className="bg-[#ececec] w-[1px] self-stretch"></div>
+      <div className="grid grid-cols-3 items-center gap-[14px] mb-[8px] min-h-[31px]">
+        <p className="text-[24px] font-bold text-left text-darkmuted">$74</p>
+        <div className="bg-[#ececec] w-[1px] self-stretch"></div>
+        <div>
+          <p className="text-[10px] text-darkmuted font-medium mb-[2px] whitespace-nowrap">
+            Estimated profit
+          </p>
+          <p className="text-[#35948d] font-bold text-[14px] whitespace-nowrap">
+            $ 1.95 (2%)
+          </p>
+        </div>
       </div>
+
+      <button className="bg-[#815aac] text-white text-[16px] cursor-pointer rounded-[12px] font-medium py-[12px]">
+        ORDER NOW
+      </button>
     </div>
   );
 };
