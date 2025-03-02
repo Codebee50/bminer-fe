@@ -28,6 +28,7 @@
   --color-grey300: #ececec;
   --color-textgrey: rgb(91, 91, 91);
   --color-brightyellow: #ffc025;
+  --color-grey400: hsla(0, 0%, 100%, 0.15);
 
   --background-image-banner: url("/herobanner.jpg");
 }
@@ -59,11 +60,10 @@ body {
     );
   }
 
-
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
   }
-  
+
   .no-scrollbar {
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
