@@ -2,7 +2,7 @@ import React from "react";
 
 const MiningPlanCard = () => {
   return (
-    <div className="flex flex-col gap-[12px] relative overflow-hidden w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px]">
+    <div className="flex flex-col gap-[12px] relative overflow-hidden max-w-[288px] min-w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px] shrink-0">
       <div className="flex flex-row justify-between mb-[8px]">
         <div className="flex flex-col">
           <p className="text-[20px] text-darkmuted">Classic</p>
@@ -34,6 +34,21 @@ const MiningPlanCard = () => {
       <button className="bg-[#815aac] text-white text-[16px] cursor-pointer rounded-[12px] font-medium py-[12px]">
         ORDER NOW
       </button>
+
+      <div className="h-[1px] bg-grey300 w-full"></div>
+
+      <div className="bg-transparent border border-grey300 rounded-[8px] flex flex-row justify-between py-[11px] px-[11px]">
+        <div className="border-r borde-r-grey300 flex-[1_1]">
+            <p className="text-[14px] text-darkmuted font-medium">1-month</p>
+        </div>
+        <div className="flex-[1_1]">
+            <p className="text-[14px] text-textgrey text-center font-medium">50 th/s</p>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-[10px]">
+            <input type="range" name="" min={0} max={99} step={1} value={0} className="h-[34px] appearance-none w-full" id="" />
+      </div>
     </div>
   );
 };

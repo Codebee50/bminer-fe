@@ -17,14 +17,19 @@ const BuyHashpower = () => {
         <div className="flex flex-row items-center gap-7 mt-5">
           {planNameList.map((name) => {
             return (
-              <p className="cursor-pointer text-[16px] font-normal text-[#9a9a9a] hover:text-darkmuted hover:underline">
+              <p className="cursor-pointer text-[16px] font-normal text-[#9a9a9a] hover:text-darkmuted hover:underline" key={name}>
                 {name}
               </p>
             );
           })}
         </div>
 
-        <div>
+        <div className="w-full flex flex-row items-center overflow-x-scroll gap-5 mt-4">
+          <MiningPlanCard />
+          <MiningPlanCard />
+          <MiningPlanCard />
+          <MiningPlanCard />
+          <MiningPlanCard />
           <MiningPlanCard />
         </div>
       </div>
