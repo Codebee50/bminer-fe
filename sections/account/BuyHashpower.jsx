@@ -24,7 +24,7 @@ const BuyHashpower = () => {
           })}
         </div>
 
-        <div className="w-full flex flex-row items-center overflow-x-scroll gap-5 mt-4">
+        <div className="w-full flex flex-row items-center overflow-x-scroll no-scrollbar gap-5 mt-4">
           <MiningPlanCard />
           <MiningPlanCard />
           <MiningPlanCard />

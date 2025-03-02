@@ -2,6 +2,7 @@ import React from "react";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { MdInfoOutline } from "react-icons/md";
 import { RiApps2AddLine } from "react-icons/ri";
+import PlanCard from "./PlanCard";
 
 const MiningPlanCard = () => {
   return (
@@ -90,8 +91,25 @@ const MiningPlanCard = () => {
       </div>
 
       <div className="flex flex-row items-center text-[#815aac] font-semibold gap-2">
-        <RiApps2AddLine size={20}/>
+        <RiApps2AddLine size={20} />
         <p>ROI Calculator</p>
+      </div>
+
+      <div className="flex flex-row items-center justify-between">
+        <p className="text-[10px] text-[#5b5b5b] font-medium">BTC Price</p>
+        <div className="flex flex-row items-center gap-[4px]">
+          <PlanCard />
+          <PlanCard />
+          <PlanCard />
+        </div>
+      </div>
+
+      <div className="flex flex-row items-center justify-between gap-[8px]">
+        <p className="text-[10px] text-[#5b5b5b] font-medium">Send out at 100%</p>
+
+        <div className="css-n8rv7h flex-[1_1]" end={77}>
+          <p className="text-[8px] text-white font-bold">89%</p>
+        </div>
       </div>
     </div>
   );
