@@ -7,8 +7,10 @@ import { FiUser } from "react-icons/fi";
 const TopNav = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
-    <div className="padded-section w-full py-3 flex flex-row items-center justify-between sticky top-0 bg-white border-b-[0.4px]">
-      <img src={logo.src} alt="Bitcoinminer" />
+    <div className="padded-section w-full py-3 flex flex-row items-center justify-between sticky top-0 bg-white border-b-[0.4px] z-20">
+      <a href="/">
+        <img src={logo.src} alt="Bitcoinminer" />
+      </a>
 
       <div className="flex flex-row items-center gap-7">
         {navList.map((navItem) => {

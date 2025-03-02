@@ -19,6 +19,7 @@ import { RiTokenSwapLine } from "react-icons/ri";
 import { RiUserAddLine } from "react-icons/ri";
 import { MdOutlineCandlestickChart } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
+import Footer from "@/components/Footer";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -68,7 +69,7 @@ const Page = () => {
     },
   ];
   return (
-    <section>
+    <section className="flex flex-col">
       <TopNav />
       <SectionWrapper pad={false}>
         <div className="w-full flex flex-row mt-[50px] gap-20">
@@ -129,6 +130,8 @@ const Page = () => {
           <div className="w-[80%]">{getSection(section)}</div>
         </div>
       </SectionWrapper>
+
+      <Footer></Footer>
     </section>
   );
 };
