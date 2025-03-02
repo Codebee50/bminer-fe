@@ -1,4 +1,7 @@
 import React from "react";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { MdInfoOutline } from "react-icons/md";
+import { RiApps2AddLine } from "react-icons/ri";
 
 const MiningPlanCard = () => {
   return (
@@ -49,6 +52,8 @@ const MiningPlanCard = () => {
       </div>
 
       <div className="flex items-center gap-[10px]">
+        <MdInfoOutline className="text-darkmuted opacity-50" size={20} />
+
         <input
           type="range"
           name=""
@@ -70,6 +75,23 @@ const MiningPlanCard = () => {
                 [&::-moz-range-thumb]:cursor-pointer"
           id=""
         />
+      </div>
+
+      <div className="w-full flex flex-row justify-between items-center">
+        <p className="text-[10px] text-[#5b5b5b] font-medium">
+          Discount on volume:
+        </p>
+        <p className="text-[11px] font-bold">3%</p>
+      </div>
+
+      <div className="w-full flex flex-row justify-between items-center">
+        <p className="text-[10px] text-[#5b5b5b] font-medium">Saved:</p>
+        <p className="text-[11px] font-bold">$ 3.4</p>
+      </div>
+
+      <div className="flex flex-row items-center text-[#815aac] font-semibold gap-2">
+        <RiApps2AddLine size={20}/>
+        <p>ROI Calculator</p>
       </div>
     </div>
   );
