@@ -36,8 +36,8 @@ const Footer = () => {
 
   return (
     <footer className="w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow">
-      <SectionWrapper>
-        <div className="flex flex-col">
+      <SectionWrapper pad={false}>
+        <div className="flex flex-col pt-20">
           <div className="flex flex-row items-start justify-between gap-4">
             <div className="flex flex-col gap-4 max-w-[500px]">
               <img src="/logowhite.svg" className="w-[100px]" alt="" />

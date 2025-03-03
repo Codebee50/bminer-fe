@@ -1,3 +1,5 @@
+
+
 export const navList = [
   {
     label: "% SALE",
@@ -29,3 +31,6 @@ export const navList = [
     link: "/",
   },
 ];
+
+
+

@@ -6,7 +6,7 @@ import PlanCard from "./PlanCard";
 
 const MiningPlanCard = () => {
   return (
-    <div className="flex flex-col gap-[12px] relative overflow-hidden max-w-[288px] min-w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px] shrink-0">
+    <div className="bg-white flex flex-col gap-[12px] relative overflow-hidden max-w-[288px] min-w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px] shrink-0">
       <div className="flex flex-row justify-between mb-[8px]">
         <div className="flex flex-col">
           <p className="text-[20px] text-darkmuted">Classic</p>
