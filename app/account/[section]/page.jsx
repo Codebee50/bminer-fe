@@ -20,10 +20,20 @@ import { RiUserAddLine } from "react-icons/ri";
 import { MdOutlineCandlestickChart } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
 import Footer from "@/components/Footer";
+import DemoMining from "@/sections/account/DemoMining";
+import MyContracts from "@/sections/account/MyContracts";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
     return <BuyHashpower />;
+  }
+
+  if (currentSection == "demo") {
+    return <DemoMining />;
+  }
+
+  if (currentSection == "my-contracts") {
+    return <MyContracts />;
   }
   return <Home />;
 };
@@ -38,12 +48,12 @@ const Page = () => {
       icon: TiTag,
       path: "/account/buy-hashpower",
     },
-    { id: 3, name: "Demo Mining", icon: FaChartLine, path: "/demo-mining" },
+    { id: 3, name: "Demo Mining", icon: FaChartLine, path: "/account/demo" },
     {
       id: 4,
       name: "My contracts",
       icon: IoBookmarksOutline,
-      path: "/contracts",
+      path: "/account/my-contracts",
     },
     {
       id: 5,
