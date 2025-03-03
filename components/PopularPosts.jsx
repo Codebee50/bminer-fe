@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 import axios from "axios";
 import { BsArrowLeft } from "react-icons/bs";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";P
 
 const PopularPosts = ({ heading = "Popular posts" }) => {
   const [blogPosts, setBlogPosts] = useState([]);

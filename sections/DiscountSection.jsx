@@ -7,7 +7,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 const DiscountSection = () => {
   return (
-    <section className="w-full bg-[linear-gradient(90deg,#4c2975_0%,#2b1842_15%,#2b1842_85%,#4c2975_100%)] py-[64px] mt-[250px]">
+    <section className="w-full bg-[linear-gradient(90deg,#4c2975_0%,#2b1842_15%,#2b1842_85%,#4c2975_100%)] py-[64px] mt-[30px]">
       <SectionWrapper pad={false}>
         <div className="flex gap-[32px] max-w-[1300px]">
           <div className="flex flex-col flex-[1_1]">
