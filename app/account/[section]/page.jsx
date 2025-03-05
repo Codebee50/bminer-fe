@@ -24,6 +24,7 @@ import DemoMining from "@/sections/account/DemoMining";
 import MyContracts from "@/sections/account/MyContracts";
 import AuthProtected from "@/components/AuthProtected";
 import UserCard from "@/components/UserCard";
+import SettingSection from "@/sections/account/SettingSection";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -36,6 +37,10 @@ const getSection = (currentSection) => {
 
   if (currentSection == "my-contracts") {
     return <MyContracts />;
+  }
+
+  if (currentSection == "settings") {
+    return <SettingSection />;
   }
   return <Home />;
 };
@@ -69,7 +74,7 @@ const Page = () => {
       id: 2,
       name: "Settings",
       icon: MdOutlineCandlestickChart,
-      path: "/buy-hashpower",
+      path: "/account/settings",
     },
     { id: 1, name: "Referral", icon: RiUserAddLine, path: "/accounts" },
 

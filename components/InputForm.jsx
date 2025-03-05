@@ -5,7 +5,10 @@ const InputForm = ({
   placeholder = "",
   type = "text",
   name = "",
+  initial = null,
+  value = null,
   required = true,
+  readOnly = false,
 }) => {
   return (
     <div className="flex flex-col w-full">
@@ -17,6 +20,12 @@ const InputForm = ({
         placeholder={placeholder}
         className="border border-[#ececec] bg-white rounded-[12px] py-[14px] px-[20px] w-full "
         required={required}
+        {...(value !== null
+          ? { value }
+          : initial !== null
+          ? { defaultValue: initial }
+          : {})}
+        readOnly={readOnly}
       />
     </div>
   );
