@@ -9,7 +9,7 @@ const RevenueStatList = () => {
     { title: "Today’s est. revenue", value: "0 BTC" },
   ];
   return (
-    <div className="w-full flex flex-row justify-between gap-3">
+    <div className="w-full grid grid-cols-2 br770:grid-cols-4 justify-between gap-3">
       {revenueStats.map((rev) => (
         <RevenueStat {...rev} key={rev.title} />
       ))}

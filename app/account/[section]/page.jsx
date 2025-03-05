@@ -23,6 +23,7 @@ import Footer from "@/components/Footer";
 import DemoMining from "@/sections/account/DemoMining";
 import MyContracts from "@/sections/account/MyContracts";
 import AuthProtected from "@/components/AuthProtected";
+import UserCard from "@/components/UserCard";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -84,17 +85,9 @@ const Page = () => {
       <section className="flex flex-col">
         <TopNav />
         <SectionWrapper pad={false}>
-          <div className="w-full flex flex-row mt-[50px] gap-20">
-            <div className="w-[20%]">
-              <div className="w-full rounded-lg px-3 py-5 flex flex-row items-center bg-darkmuted gap-4">
-                <div className="w-[46px] h-[46px] rounded-full bg-[#815aac] flex items-center justify-center text-white">
-                  <p>OU</p>
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-[#c9c9c9]">Welcome</p>
-                  <p className="text-white">Onuh Udo</p>
-                </div>
-              </div>
+          <div className="w-full flex flex-col br1050:flex-row mt-[50px] gap-20">
+            <div className="w-[20%] max-br1050:hidden">
+              <UserCard />
 
               <div className="w-full flex flex-col">
                 <p className="text-[16px] text-[#c9c9c9] mt-[40px] ml-[20px]">
@@ -139,7 +132,11 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[80%]">{getSection(section)}</div>
+
+            <div className="br1050:hidden w-full">
+              <UserCard />
+            </div>
+            <div className="w-full br1050:w-[80%]">{getSection(section)}</div>
           </div>
         </SectionWrapper>
 

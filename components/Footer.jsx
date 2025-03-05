@@ -38,7 +38,7 @@ const Footer = () => {
     <footer className="w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow mt-10">
       <SectionWrapper pad={false}>
         <div className="flex flex-col pt-20">
-          <div className="flex flex-row items-start justify-between gap-4">
+          <div className="flex flex-row flex-wrap items-start justify-between gap-8">
             <div className="flex flex-col gap-4 max-w-[500px]">
               <img src="/logowhite.svg" className="w-[100px]" alt="" />
 
@@ -46,7 +46,7 @@ const Footer = () => {
                 Trading Way FZCO - Dubai Silicon Oasis, PO Box 341041, Dubai,
                 UAE, Dubai Digital Park – Building A1
               </p>
-              <div className="flex space-x-4">
+              <div className="space-x-4 flex flex-row items-center  w-full overflow-x-scroll no-scrollbar">
                 {[
                   { icon: FaFacebookF },
                   { icon: FaTelegramPlane },
@@ -103,7 +103,9 @@ const Footer = () => {
           </div>
 
           <div className="border-t border-t-grey400 mt-7 pt-[20px]">
-            <p className="text-[16px] text-[#b3b3b3]">© 2025 1BITUP. All rights reserved</p>
+            <p className="text-[16px] text-[#b3b3b3]">
+              © 2025 1BITUP. All rights reserved
+            </p>
           </div>
         </div>
       </SectionWrapper>

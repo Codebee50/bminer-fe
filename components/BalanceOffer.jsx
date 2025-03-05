@@ -21,7 +21,7 @@ const BalanceOffer = () => {
     mutate();
   }, []);
   return (
-    <div className="grid grid-cols-2 items-stretch justify-stretch gap-3 mt-6 w-full ">
+    <div className="grid grid-cols-1 br770:grid-cols-2 items-stretch justify-stretch gap-3 mt-6 w-full ">
       <div className="flex flex-col w-full h-full">
         <p className="font-semibold text-[20px]">Current balance:</p>
 
