@@ -40,10 +40,10 @@ const WhyChooseUs = () => {
       <div className="flex flex-col gap-[32px] py-[64px]">
         <div className="w-full flex flex-row">
           <div className="flex flex-col flex-[2_1]">
-            <h3 className="font-medium mb-[15px] text-[40px] text-darkmuted ">
+            <h3 className="font-medium mb-[15px] text-[30px] md:text-[40px] text-darkmuted ">
               Why choose us?
             </h3>
-            <p className="text-[#5b5b5b] text-[20px] mb-[40px]">
+            <p className="text-[#5b5b5b] text-[15px] sm:text-[20px] mb-[40px]">
               At 1BitUp, we focus on delivering real, measurable results. Our
               commitment is to practical outcomes, not just theoretical
               promises, ensuring you see tangible success from your investment.
@@ -55,13 +55,13 @@ const WhyChooseUs = () => {
           <div>
             <img
               src="/cpu.png"
-              className="w-[90%] max-w-[319px] h-[239px] object-contain object-center"
+              className="w-[90%] max-w-[319px] h-[239px] object-contain object-center max-br770:hidden"
               alt=""
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-3 w-full gap-[42px]">
+        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 w-full gap-[42px]">
           {features.map((feature) => {
             return (
               <div className="flex flex-col gap-[10px]">

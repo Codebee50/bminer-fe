@@ -55,8 +55,8 @@ const Page = () => {
       config
     );
     if (data) {
+      Cookies.set("refreshToken", refreshToken);
       Cookies.set("userToken", accessToken);
-      Cookies.set("accessToken", accessToken);
       dispatch(setCredentials(data));
 
       toast.success("Login successful");
@@ -127,6 +127,10 @@ const Page = () => {
                 </div>
 
                 <RegButton label="Signup" full={true} isLoading={isLoggingIn} />
+
+                <p className="text-[14px] text-darkmuted text-center">
+                  Dont have an account? <a href="/sign-up" className="text-[#8e61bf]">Sign up for free</a>
+                </p>
               </div>
             </form>
           </div>

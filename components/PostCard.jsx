@@ -10,7 +10,7 @@ const PostCard = ({ title, author_name, view_count, slug, read_time }) => {
   return (
     <div key={title} className="w-full flex flex-col gap-3" href={`/blog/${slug}`} onClick={handleCardClicked}>
       <img
-        className="w-full h-[204px] rounded-lg"
+        className="w-full h-[204px] rounded-lg object-cover object-center"
         src={
           "https://1bitup.com/_next/image?url=https%3A%2F%2Fapi.1bitup.com%2Fuploads%2Fblog%2Fwhat-is-ethereum.jpg&w=3840&q=75"
         }

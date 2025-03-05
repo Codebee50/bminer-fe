@@ -61,7 +61,7 @@ const Page = () => {
                 </div>
 
                 <RegButton
-                  label="Signup"
+                  label="Submit"
                   full={true}
                   isLoading={isResettingPassword}
                 />

@@ -12,10 +12,11 @@ import { handleGenericError } from "@/utils/errorHandler";
 import React from "react";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const passwordRequirements = [
     {
       requirement: "Password must be at least 8 characters long",
@@ -33,12 +34,14 @@ const Page = () => {
   const { mutate: registerUser, isLoading: isRegistering } = usePostRequest(
     makeApiUrl("/api/v1/auth/register/"),
     (response) => {
-      toast.success("User registered successfully");
+      toast.success(
+        "Your account has been successfully created. Please check your email for verification instructions."
+      );
+      router.push(`/confirm-registration?e=${response?.data?.user?.email}`);
     },
     (error) => {
       toast.error(handleGenericError(error));
-    },
-    
+    }
   );
 
   const handleFormSubmitted = (e) => {
@@ -125,8 +128,8 @@ const Page = () => {
                 <InputForm
                   label="Referral code"
                   placeholder="Referral code"
-                  type="password"
                   required={false}
+                  initial={searchParams.get("referral") || null}
                 />
                 <div className="w-full flex flex-col gap-[10px]">
                   <CheckboxInput
@@ -142,6 +145,13 @@ const Page = () => {
                 </div>
 
                 <RegButton label="Signup" full={true} />
+
+                <p className="text-[14px] text-darkmuted text-center">
+                  Have an account?{" "}
+                  <a href="/sign-up" className="text-[#8e61bf]">
+                    Sign in
+                  </a>
+                </p>
               </div>
             </form>
           </div>

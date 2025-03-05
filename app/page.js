@@ -24,9 +24,7 @@ export default function Home() {
       <SectionWrapper pad={false}>
         <LatestNewsSection heading="Latest news" />
       </SectionWrapper>
-      <Footer/>
-
-      {/* <Hero /> */}
+      <Footer />
     </div>
   );
 }

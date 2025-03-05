@@ -5,8 +5,8 @@ import Stats from "@/components/Stats";
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-screen">
-      <div className="flex items-center justify-center bg-primaryPurple px-[50px] relative bg-no-repeat bg-cover w-full h-full">
+    <section className="w-full min-h-screen br1270:h-screen">
+      <div className="flex items-center justify-center bg-primaryPurple px-[50px] relative bg-no-repeat bg-cover w-full h-full max-[1270px]:py-[30px]">
         <span className="block overflow-hidden absolute inset-0 w-full h-full bg-red-50">
           <img
             src="/herobanner.jpg"
@@ -15,10 +15,10 @@ const HeroSection = () => {
           />
         </span>
 
-        <div className="w-full max-w-[1300px] px-[50px]">
-          <div className="flex justify-between gap-[64px]">
+        <div className="w-full max-w-[1300px] sm:px-[50px]">
+          <div className="flex max-[1270px]:flex-col justify-between gap-[64px]">
             <div className="flex flex-col justify-center relative gap-[8px] flex-[5_1_0%]">
-              <h1 className="text-white text-[60px] font-semibold">
+              <h1 className="text-white text-[50px] sm:text-[60px] font-semibold">
                 Cloud Mining Platform
               </h1>
               <h2 className="text-white text-[32px] font-semibold">

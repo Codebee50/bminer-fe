@@ -5,12 +5,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import TopNav from "@/components/TopNav";
 import React, { useEffect } from "react";
 import { FaRegCircleXmark } from "react-icons/fa6";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "@/components/ui/input-otp";
+
 import RegButton from "@/components/RegButton";
 import Footer from "@/components/Footer";
 import { toast } from "react-toastify";
@@ -66,12 +61,7 @@ const Page = () => {
     changePassword(formData);
   };
 
-  // useEffect(() => {
-  //   if (!searchParams.get("email")) {
-  //     toast.error("Fatal: Invalid email address");
-  //     router.push("/sign-in");
-  //   }
-  // }, []);
+
   return (
     <section>
       <TopNav />
@@ -114,31 +104,7 @@ const Page = () => {
               })}
             </div>
 
-            {/* <p className="my-[30px]">
-              Enter the 6-digit code we emailed to onuhudoudo@gmail.com
-            </p>
 
-            <div className="w-full flex flex-row">
-              <InputOTP
-                maxLength={6}
-                className={"flex flex-row justify-between w-full"}
-                name="token"
-              >
-                <InputOTPGroup
-                  className={"flex flex-row justify-between w-full gap-5"}
-                >
-                  {[0, 1, 2, 3, 4, 5].map((item, index) => {
-                    return (
-                      <InputOTPSlot
-                        className={"p-8 border shadow-none text-xl  "}
-                        index={index}
-                        key={`input-otp-${index}`}
-                      />
-                    );
-                  })}
-                </InputOTPGroup>
-              </InputOTP>
-            </div> */}
 
             <RegButton label="Save" full={true} isLoading={isLoading} />
           </form>
