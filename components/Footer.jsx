@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow">
+    <footer className="w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow mt-10">
       <SectionWrapper pad={false}>
         <div className="flex flex-col pt-20">
           <div className="flex flex-row items-start justify-between gap-4">

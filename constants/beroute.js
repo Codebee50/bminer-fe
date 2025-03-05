@@ -4,3 +4,7 @@ export const BASE_BE_URL =
 export const makeAbsoluteImageUrl = (relativeUrl) => {
   return `${BASE_BE_URL}${relativeUrl}`;
 };
+
+export const makeApiUrl = (url) => {
+  return `${BASE_BE_URL}${url}`;
+};

@@ -29,8 +29,10 @@
   --color-textgrey: rgb(91, 91, 91);
   --color-brightyellow: #ffc025;
   --color-grey400: hsla(0, 0%, 100%, 0.15);
+  --color-fivebgrey: #5b5b5b;
 
   --background-image-banner: url("/herobanner.jpg");
+  --signubg: url("/signupbg.webp");
 }
 
 body {

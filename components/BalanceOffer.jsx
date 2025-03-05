@@ -1,6 +1,25 @@
-import React from "react";
+import { makeApiUrl } from "@/constants/beroute";
+import useFetchRequest from "@/hooks/useFetch";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const BalanceOffer = () => {
+  const [balances, setBalances] = useState(null);
+
+  const { mutate, isLoading } = useFetchRequest(
+    makeApiUrl("/api/v1/dashboard/balance/"),
+    (response) => {
+      setBalances(response.data);
+      console.log(response);
+    },
+    (error) => {
+      toast.error("Error getting balances");
+    }
+  );
+
+  useEffect(() => {
+    mutate();
+  }, []);
   return (
     <div className="grid grid-cols-2 items-stretch justify-stretch gap-3 mt-6 w-full ">
       <div className="flex flex-col w-full h-full">
@@ -10,11 +29,13 @@ const BalanceOffer = () => {
           <div className="flex flex-col">
             <div className="border-b border-b-[#ececec] pb-[15px]">
               <p className="text-[14px] text-[#5b5b5]">Total assets</p>
-              <p className="text-[24px] text-[#815aac] font-semibold">0 BTC</p>
+              <p className="text-[24px] text-[#815aac] font-semibold">
+                {parseFloat(balances?.balance_btc || 0.0)} BTC
+              </p>
             </div>
             <div className="">
               <p className="text-[14px] text-[#5b5b5]">Current balance</p>
-              <p className="text-[24px] text-[#815aac] font-semibold">0 $</p>
+              <p className="text-[24px] text-[#815aac] font-semibold">{parseFloat(balances?.balance_usd || 0.0)} $</p>
             </div>
           </div>
 

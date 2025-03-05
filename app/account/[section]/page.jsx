@@ -22,6 +22,7 @@ import { LuPencilLine } from "react-icons/lu";
 import Footer from "@/components/Footer";
 import DemoMining from "@/sections/account/DemoMining";
 import MyContracts from "@/sections/account/MyContracts";
+import AuthProtected from "@/components/AuthProtected";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -79,70 +80,72 @@ const Page = () => {
     },
   ];
   return (
-    <section className="flex flex-col">
-      <TopNav />
-      <SectionWrapper pad={false}>
-        <div className="w-full flex flex-row mt-[50px] gap-20">
-          <div className="w-[20%]">
-            <div className="w-full rounded-lg px-3 py-5 flex flex-row items-center bg-darkmuted gap-4">
-              <div className="w-[46px] h-[46px] rounded-full bg-[#815aac] flex items-center justify-center text-white">
-                <p>OU</p>
+    <AuthProtected>
+      <section className="flex flex-col">
+        <TopNav />
+        <SectionWrapper pad={false}>
+          <div className="w-full flex flex-row mt-[50px] gap-20">
+            <div className="w-[20%]">
+              <div className="w-full rounded-lg px-3 py-5 flex flex-row items-center bg-darkmuted gap-4">
+                <div className="w-[46px] h-[46px] rounded-full bg-[#815aac] flex items-center justify-center text-white">
+                  <p>OU</p>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-[#c9c9c9]">Welcome</p>
+                  <p className="text-white">Onuh Udo</p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <p className="text-[#c9c9c9]">Welcome</p>
-                <p className="text-white">Onuh Udo</p>
+
+              <div className="w-full flex flex-col">
+                <p className="text-[16px] text-[#c9c9c9] mt-[40px] ml-[20px]">
+                  PRIMARY
+                </p>
+                <div className="flex flex-col gap-5 mt-5">
+                  {primaryMenuItems.map((menuItem) => {
+                    return (
+                      <a
+                        className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
+                        key={menuItem.name}
+                        href={menuItem.path}
+                      >
+                        <menuItem.icon />
+                        <p className="whitespace-nowrap">{menuItem.name}</p>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="w-[70%] h-[1px] bg-darkmuted opacity-20 mt-10"></div>
+
+              <div className="w-full flex flex-col">
+                <p className="text-[16px] text-[#c9c9c9] mt-[20px] ml-[20px]">
+                  SECONDARY
+                </p>
+
+                <div className="flex flex-col gap-5 mt-5">
+                  {secondaryMenuItems.map((menuItem) => {
+                    return (
+                      <a
+                        className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
+                        key={`nav-item-${menuItem.name}`}
+                        href={menuItem.path}
+                      >
+                        <menuItem.icon />
+                        <p className="whitespace-nowrap">{menuItem.name}</p>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-
-            <div className="w-full flex flex-col">
-              <p className="text-[16px] text-[#c9c9c9] mt-[40px] ml-[20px]">
-                PRIMARY
-              </p>
-              <div className="flex flex-col gap-5 mt-5">
-                {primaryMenuItems.map((menuItem) => {
-                  return (
-                    <a
-                      className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
-                      key={menuItem.name}
-                      href={menuItem.path}
-                    >
-                      <menuItem.icon />
-                      <p className="whitespace-nowrap">{menuItem.name}</p>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="w-[70%] h-[1px] bg-darkmuted opacity-20 mt-10"></div>
-
-            <div className="w-full flex flex-col">
-              <p className="text-[16px] text-[#c9c9c9] mt-[20px] ml-[20px]">
-                SECONDARY
-              </p>
-
-              <div className="flex flex-col gap-5 mt-5">
-                {secondaryMenuItems.map((menuItem) => {
-                  return (
-                    <a
-                      className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
-                      key={`nav-item-${menuItem.name}`}
-                      href={menuItem.path}
-                    >
-                      <menuItem.icon />
-                      <p className="whitespace-nowrap">{menuItem.name}</p>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
+            <div className="w-[80%]">{getSection(section)}</div>
           </div>
-          <div className="w-[80%]">{getSection(section)}</div>
-        </div>
-      </SectionWrapper>
+        </SectionWrapper>
 
-      <Footer></Footer>
-    </section>
+        <Footer></Footer>
+      </section>
+    </AuthProtected>
   );
 };
 

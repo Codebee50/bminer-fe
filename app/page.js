@@ -7,6 +7,9 @@ import DiscountSection from "@/sections/DiscountSection";
 import PopularPosts from "@/components/PopularPosts";
 import SectionWrapper from "@/components/SectionWrapper";
 import LatestNewsSection from "@/sections/LatestNewsSection";
+import WhyChooseUs from "@/sections/WhyChooseUs";
+import PlansDisplay from "@/sections/PlansDisplay";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,9 +19,12 @@ export default function Home() {
       <GetStarted />
       <ExperienceAdvantageSection />
       <DiscountSection />
-      <SectionWrapper>
+      <WhyChooseUs />
+      <PlansDisplay />
+      <SectionWrapper pad={false}>
         <LatestNewsSection heading="Latest news" />
       </SectionWrapper>
+      <Footer/>
 
       {/* <Hero /> */}
     </div>

@@ -1,5 +1,3 @@
-
-
 export const navList = [
   {
     label: "% SALE",
@@ -32,5 +30,18 @@ export const navList = [
   },
 ];
 
+export function formatDate(dateString) {
+  const date = new Date(dateString);
 
+  const options = {
+    year: "numeric",
+    month: "numeric", // Full month name
+    day: "numeric",
+    // hour: "2-digit",
+    // minute: "2-digit",
+    // second: "2-digit",
+    // timeZoneName: "short", // Includes the time zone
+  };
 
+  return date.toLocaleDateString("en-US", options);
+}
