@@ -37,6 +37,7 @@ const MiningDurationSelector = ({ onValueChanged }) => {
             selectedTab={selected}
             onTabClicked={handleSelectedChanged}
             idValue={tab.idValue}
+            key={tab.label}
           />
         );
       })}

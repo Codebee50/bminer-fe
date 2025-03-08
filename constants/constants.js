@@ -13,6 +13,8 @@ import { RiUserAddLine } from "react-icons/ri";
 import { MdOutlineCandlestickChart } from "react-icons/md";
 import { LuPencilLine } from "react-icons/lu";
 import { TbGraph } from "react-icons/tb";
+import { LuBellRing } from "react-icons/lu";
+
 
 export const navList = [
   {
@@ -63,9 +65,9 @@ export const primaryMenuItems = [
   },
   {
     id: 5,
-    name: "Transactions",
-    icon: RiTokenSwapLine,
-    path: "/transactions",
+    name: "Notifications",
+    icon: LuBellRing,
+    path: "/account/notifications",
   },
 ];
 export const secondaryMenuItems = [

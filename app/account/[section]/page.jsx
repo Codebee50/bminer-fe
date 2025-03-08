@@ -14,6 +14,7 @@ import SettingSection from "@/sections/account/SettingSection";
 import Referrals from "@/sections/account/Referrals";
 import RightSider from "@/components/RightSider";
 import BtcWallet from "@/sections/account/settings/BtcWallet";
+import Notifications from "@/sections/account/Notifications";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -36,6 +37,9 @@ const getSection = (currentSection) => {
     return <Referrals />;
   }
 
+  if (currentSection == "notifications") {
+    return <Notifications />;
+  }
 
   return <Home />;
 };

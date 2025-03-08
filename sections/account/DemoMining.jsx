@@ -84,7 +84,7 @@ const DemoMining = () => {
               </TableRow>
             </TableHeader>
             <TableBody className={"bg-[#fafafa] p-[22px]"}>
-              {miningPlans.map((plan, index) => (
+              {miningPlans?.map((plan, index) => (
                 <TableRow key={index}>
                   <TableCell className="p-[30px] text-darkmuted text-[20px] font-semibold">
                     #{plan.id}
@@ -108,7 +108,7 @@ const DemoMining = () => {
         </div>
       )}
 
-      {miningPlans.length < 1 && (
+      {(miningPlans?.length || 0) < 1 && (
         <div className="w-full flex flex-col items-center justify-center mt-5">
           <button className="text-[16px] border-[2px] py-[14px] px-[25px] font-medium min-w-[97px] text-[#815aac] border-[#815aac] rounded-[12px]">
             Bitcoin mining
