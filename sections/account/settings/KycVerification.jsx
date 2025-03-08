@@ -1,5 +1,6 @@
 "use client";
 import FileSelector from "@/components/FileSelector";
+import KycDetails from "@/components/KycDetails";
 import RegButton from "@/components/RegButton";
 import SelectInput from "@/components/SelectInput";
 import { makeApiUrl } from "@/constants/beroute";
@@ -91,22 +92,26 @@ const KycVerification = () => {
             Kyc verification
           </h2>
 
-          <div className="w-full flex flex-col gap-5 mt-5">
-            <SelectInput
-              label={"Document type"}
-              optionList={kycDocumentOptions}
-              name={"document_type"}
-              placeholder="Select the document type"
-            />
+          {kyc ? (
+            <KycDetails kyc={kyc} />
+          ) : (
+            <div className="w-full flex flex-col gap-5 mt-5">
+              <SelectInput
+                label={"Document type"}
+                optionList={kycDocumentOptions}
+                name={"document_type"}
+                placeholder="Select the document type"
+              />
 
-            <div className="flex flex-col gap-5">
-              {documentVariations.map((variation) => {
-                return <FileSelector key={variation.name} {...variation} />;
-              })}
+              <div className="flex flex-col gap-5">
+                {documentVariations.map((variation) => {
+                  return <FileSelector key={variation.name} {...variation} />;
+                })}
+              </div>
+
+              <RegButton label="Submit documents" isLoading={isLoading} />
             </div>
-
-            <RegButton label="Submit documents" isLoading={isLoading} />
-          </div>
+          )}
         </form>
       </div>
     </div>

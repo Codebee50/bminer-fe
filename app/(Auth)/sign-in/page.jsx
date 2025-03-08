@@ -125,7 +125,7 @@ const Page = () => {
 
                 {twoFaRequired && (
                   <InputForm
-                    label="2fa otp"
+                    label="Two factor authentication"
                     type="text"
                     placeholder="Enter your 2fa verification otp"
                     name="otp_code"
