@@ -13,7 +13,7 @@ const KycImage = ({ docImage, label, submitted_at }) => {
   return (
     <div className="border rounded-lg overflow-hidden">
       <div className="relative aspect-[4/3] bg-muted">
-        <img src={docImage} alt={label} fill className="object-cover h-[200px] w-full object-center" />
+        <img src={docImage} alt={label} className="object-cover h-[200px] w-full object-center" />
       </div>
 
       <div className="p-3">

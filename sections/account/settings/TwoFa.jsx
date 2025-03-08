@@ -120,7 +120,7 @@ const TwoFa = () => {
               "To use 2FA, scan the QR code on the right in the Google Authenticator app on your phone: \n \n Google Authenticator is available in Android Play Market and iOS App Store"
             }
           />
-          <div action="" className="flex flex-col w-full gap-5 mt-5">
+          <div className="flex flex-col w-full gap-5 mt-5">
             <div className="flex flex-row w-full justify-between gap-[20px] mt-[10px]">
               <img
                 src={twoFaSetup?.qr_code_url}
