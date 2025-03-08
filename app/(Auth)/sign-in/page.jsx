@@ -9,7 +9,7 @@ import TopNav from "@/components/TopNav";
 import { makeApiUrl } from "@/constants/beroute";
 import usePostRequest from "@/hooks/usePost";
 import { handleGenericError } from "@/utils/errorHandler";
-import React from "react";
+import React, { useState } from "react";
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -22,6 +22,7 @@ const Page = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
+  const [twoFaRequired, setTwoFaRequired] = useState(false);
 
   const getRoute = () => {
     const nextPage = searchParams.get("next");
@@ -71,7 +72,12 @@ const Page = () => {
       getUserDetails(access, refresh);
     },
     (error) => {
-      toast.error(handleGenericError(error));
+      console.log(error);
+      if (error.response.data.requires_2fa) {
+        setTwoFaRequired(true);
+      } else {
+        toast.error(handleGenericError(error));
+      }
     }
   );
 
@@ -103,6 +109,7 @@ const Page = () => {
                     label="Email"
                     placeholder="Your email"
                     name="email"
+                    readOnly={twoFaRequired}
                   />
                 </div>
 
@@ -112,8 +119,18 @@ const Page = () => {
                     type="password"
                     placeholder="Your password"
                     name="password"
+                    readOnly={twoFaRequired}
                   />
                 </div>
+
+                {twoFaRequired && (
+                  <InputForm
+                    label="2fa otp"
+                    type="text"
+                    placeholder="Enter your 2fa verification otp"
+                    name="otp_code"
+                  />
+                )}
 
                 <div className="w-full flex flex-row items-center">
                   <CheckboxInput label="Remember me" name="remember_me" />
@@ -129,7 +146,10 @@ const Page = () => {
                 <RegButton label="Signup" full={true} isLoading={isLoggingIn} />
 
                 <p className="text-[14px] text-darkmuted text-center">
-                  Dont have an account? <a href="/sign-up" className="text-[#8e61bf]">Sign up for free</a>
+                  Dont have an account?{" "}
+                  <a href="/sign-up" className="text-[#8e61bf]">
+                    Sign up for free
+                  </a>
                 </p>
               </div>
             </form>
