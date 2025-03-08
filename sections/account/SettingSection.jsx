@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import EditUserDetails from "./settings/EditUserDetails";
 import ChangeDetails from "./settings/ChangeDetails";
 import BtcWallet from "./settings/BtcWallet";
+import TwoFa from "./settings/TwoFa";
 
 const SettingSection = () => {
   const [selectedSection, setSelectedSection] = useState(1);
@@ -20,6 +21,7 @@ const SettingSection = () => {
     1: <EditUserDetails />,
     2: <ChangeDetails />,
     3: <BtcWallet />,
+    4: <TwoFa />,
   };
 
   return (
