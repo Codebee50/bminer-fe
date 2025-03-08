@@ -36,66 +36,68 @@ const TopNav = () => {
     }
   };
   return (
-    <SectionWrapper pad={false}>
-      <div className="w-full py-3 flex flex-row items-center justify-between  sticky top-0 bg-white border-b-[0.4px] z-20">
-        <a href="/">
-          <img src={logo.src} alt="Bitcoinminer" />
-        </a>
+    <div className="w-full sticky top-0 z-20 bg-white">
+      <SectionWrapper pad={false}>
+        <div className="w-full py-3 flex flex-row items-center justify-between bg-white border-b-[0.4px]">
+          <a href="/">
+            <img src={logo.src} alt="Bitcoinminer" />
+          </a>
 
-        <div className="flex flex-row items-center gap-7 max-xl:hidden">
-          {navList.map((navItem) => {
-            return (
-              <a
-                href={navItem.link}
-                className="text-sm"
-                key={`nav-${navItem.label}`}
-              >
-                {navItem.label}
+          <div className="flex flex-row items-center gap-7 max-xl:hidden">
+            {navList.map((navItem) => {
+              return (
+                <a
+                  href={navItem.link}
+                  className="text-sm"
+                  key={`nav-${navItem.label}`}
+                >
+                  {navItem.label}
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-row items-center gap-4">
+            {isAuthenticated ? (
+              <a href="/account/home">
+                <FiUser size={20} />
               </a>
-            );
-          })}
-        </div>
-
-        <div className="flex flex-row items-center gap-4">
-          {isAuthenticated ? (
-            <a href="/account/home">
-              <FiUser size={20} />
-            </a>
-          ) : (
-            <div className="flex flex-row items-center gap-2">
-              <a href="/sign-in" className="text-[#c9c9c9]">
-                Login
-              </a>
-            </div>
-          )}
-
-          {!isAuthenticated && (
-            <div className="w-[0.9px] bg-[#c9c9c9] h-[30px]"></div>
-          )}
-
-          {isAuthenticated &&
-            (loggingOut ? (
-              <CircleSpinner />
             ) : (
-              <button
-                className="bg-yellow100 text-white py-[12px] px-[15px] rounded-[12px] text-sm cursor-pointer"
-                onClick={handleLogOut}
-              >
-                Sign Out
-              </button>
-            ))}
+              <div className="flex flex-row items-center gap-2">
+                <a href="/sign-in" className="text-[#c9c9c9]">
+                  Login
+                </a>
+              </div>
+            )}
 
-          {!isAuthenticated && (
-            <a
-              className="bg-yellow100 text-white py-[12px] px-[15px] rounded-[12px] text-sm cursor-pointer"
-              href="/sign-up"
-            >
-              Sign up
-            </a>
-          )}
+            {!isAuthenticated && (
+              <div className="w-[0.9px] bg-[#c9c9c9] h-[30px]"></div>
+            )}
+
+            {isAuthenticated &&
+              (loggingOut ? (
+                <CircleSpinner />
+              ) : (
+                <button
+                  className="bg-yellow100 text-white py-[12px] px-[15px] rounded-[12px] text-sm cursor-pointer"
+                  onClick={handleLogOut}
+                >
+                  Sign Out
+                </button>
+              ))}
+
+            {!isAuthenticated && (
+              <a
+                className="bg-yellow100 text-white py-[12px] px-[15px] rounded-[12px] text-sm cursor-pointer"
+                href="/sign-up"
+              >
+                Sign up
+              </a>
+            )}
+          </div>
         </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </div>
   );
 };
 

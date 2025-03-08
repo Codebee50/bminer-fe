@@ -39,6 +39,7 @@
   --breakpoint-br1050: 1050px;
   --breakpoint-br1270: 1270px;
   --breakpoint-br450: 450px;
+  --breakpoint-br780: 780px;
 }
 
 body {

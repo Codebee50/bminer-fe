@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import EditUserDetails from "./settings/EditUserDetails";
 import ChangeDetails from "./settings/ChangeDetails";
+import BtcWallet from "./settings/BtcWallet";
 
 const SettingSection = () => {
   const [selectedSection, setSelectedSection] = useState(1);
@@ -18,6 +19,7 @@ const SettingSection = () => {
   const sectionMapping = {
     1: <EditUserDetails />,
     2: <ChangeDetails />,
+    3: <BtcWallet />,
   };
 
   return (
@@ -33,6 +35,7 @@ const SettingSection = () => {
                     : "text-[#9a9a9a] font-normal"
                 }`}
                 onClick={setSelectedSection.bind(null, tab.id)}
+                key={tab.name}
               >
                 {tab.name}
               </button>

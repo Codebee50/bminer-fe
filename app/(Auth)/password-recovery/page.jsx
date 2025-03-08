@@ -44,7 +44,7 @@ const Page = () => {
       <TopNav />
 
       <SectionWrapper pad={false}>
-        <div className="w-full p-[20px] grid grid-cols-1 lg:grid-cols-2 rounded-[24px] bg-[#f8f8f8] mt-[50px]">
+        <div className="w-full sm:p-[20px] grid grid-cols-1 lg:grid-cols-2 rounded-[24px] bg-[#f8f8f8] mt-[50px]">
           <div className="p-[45px]">
             <h1 className="text-[30px] mb-[8px] font-semibold text-darkmuted">
               Password recovery

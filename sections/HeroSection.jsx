@@ -6,7 +6,7 @@ import Stats from "@/components/Stats";
 const HeroSection = () => {
   return (
     <section className="w-full min-h-screen br1270:h-screen">
-      <div className="flex items-center justify-center bg-primaryPurple px-[50px] relative bg-no-repeat bg-cover w-full h-full max-[1270px]:py-[30px]">
+      <div className="flex items-center justify-center bg-primaryPurple px-[20px] sm:px-[50px] relative bg-no-repeat bg-cover w-full h-full max-[1270px]:py-[30px]">
         <span className="block overflow-hidden absolute inset-0 w-full h-full bg-red-50">
           <img
             src="/herobanner.jpg"
@@ -38,9 +38,9 @@ const HeroSection = () => {
                 />
               </div>
 
-              <div className="flex flex-row items-center mt-4 gap-5">
+              <div className="flex flex-row items-center mt-4 gap-5 max-sm:flex-wrap">
                 <LandingCtaButton label="Cloud Mining" />
-                <LandingCtaButton label="Cloud Mining" variant="white" />
+                <LandingCtaButton label="Steady Mining" variant="white" />
               </div>
             </div>
 

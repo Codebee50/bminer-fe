@@ -64,7 +64,7 @@ const Page = () => {
       <TopNav />
 
       <SectionWrapper pad={false}>
-        <div className="w-full p-[20px] grid grid-cols-1 lg:grid-cols-2 rounded-[24px] bg-[#f8f8f8]">
+        <div className="w-full sm:p-[20px] grid grid-cols-1 lg:grid-cols-2 rounded-[24px] bg-[#f8f8f8]">
           <div className="p-[45px]">
             <h1 className="text-[30px] mb-[8px] font-semibold text-darkmuted">
               Registration
@@ -118,7 +118,7 @@ const Page = () => {
                         className="flex flex-row items-center text-[#e8173e] gap-1"
                         key={requirement.requirement}
                       >
-                        <FaRegCircleXmark />
+                        <FaRegCircleXmark className="shrink-0" />
                         <p>{requirement.requirement}</p>
                       </div>
                     );
@@ -148,7 +148,7 @@ const Page = () => {
 
                 <p className="text-[14px] text-darkmuted text-center">
                   Have an account?{" "}
-                  <a href="/sign-up" className="text-[#8e61bf]">
+                  <a href="/sign-in" className="text-[#8e61bf]">
                     Sign in
                   </a>
                 </p>

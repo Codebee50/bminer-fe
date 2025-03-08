@@ -4,11 +4,12 @@ const CheckboxInput = ({
   label = "",
   type = "checkbox",
   name = "",
+  defaultChecked = false,
 }) => {
   return (
     <div className="flex flex-row w-full items-center gap-2">
-      <input type={type} name={name} id="" />
-      <p className="text-darkmuted text-[0.8rem]">{label}</p>
+      <input type={type} name={name} id="" defaultChecked={defaultChecked} />
+      <p className="text-darkmuted text-sm">{label}</p>
     </div>
   );
 };

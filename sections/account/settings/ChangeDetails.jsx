@@ -50,7 +50,7 @@ const ChangeDetails = () => {
 
           <form
             action=""
-            className="flex flex-col w-full gap-5 mt-5"
+            className="flex flex-col w-full gap-5 mt-5 lg:w-[60%]"
             onSubmit={handleChangePasswordSubmitted}
           >
             <InputForm
@@ -86,7 +86,7 @@ const ChangeDetails = () => {
             <RegButton label="Save" isLoading={isChangingPassword} full={true} />
           </form>
         </div>
-        <div className="w-full flex flex-col">
+        {/* <div className="w-full flex flex-col">
           <h2 className="text-[20px] text-darkmuted font-semibold whitespace-nowrap text-start">
             Change email
           </h2>
@@ -112,7 +112,7 @@ const ChangeDetails = () => {
             </div>
             <RegButton label="Save" isLoading={false} full={true} />
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const GetStarted = () => {
 
   return (
     <section className="w-full min-h-screen br1270:h-screen pt-[160px] pb-[64px]  justify-center">
-      <div className="w-full max-w-[1300px] px-[5px] sm:px-[50px] mx-auto">
+      <div className="w-full max-w-[1300px] px-[10px] sm:px-[50px] mx-auto">
         <div className="flex max-br1270:flex-col bg-[#f8f8f8] rounded-3xl p-[20px] sm:p-[60px]">
           <div className="flex flex-col justify-end flex-[1_1]">
             <div className="relative h-[300px] block">
