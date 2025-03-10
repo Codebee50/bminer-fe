@@ -10,7 +10,6 @@ const BalanceOffer = () => {
     makeApiUrl("/api/v1/dashboard/balance/"),
     (response) => {
       setBalances(response.data);
-      console.log(response);
     },
     (error) => {
       toast.error("Error getting balances");
@@ -35,7 +34,9 @@ const BalanceOffer = () => {
             </div>
             <div className="">
               <p className="text-[14px] text-[#5b5b5]">Current balance</p>
-              <p className="text-[24px] text-[#815aac] font-semibold">{parseFloat(balances?.balance_usd || 0.0)} $</p>
+              <p className="text-[24px] text-[#815aac] font-semibold">
+                {parseFloat(balances?.balance_usd || 0.0)} $
+              </p>
             </div>
           </div>
 

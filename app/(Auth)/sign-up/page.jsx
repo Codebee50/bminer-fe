@@ -144,7 +144,7 @@ const Page = () => {
                   />
                 </div>
 
-                <RegButton label="Signup" full={true} />
+                <RegButton label="Signup" full={true} isLoading={isRegistering} />
 
                 <p className="text-[14px] text-darkmuted text-center">
                   Have an account?{" "}

@@ -4,7 +4,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
@@ -33,7 +32,7 @@ import DemoMiningDetail from "@/components/DemoMiningDetail";
 const DemoMining = () => {
   const inputRef = useRef();
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const [miningPlans, setMiningPlans] = useState([]);
+  const [miningPlans, setMiningPlans] = useState(null);
 
   const [detailOpen, setDetailOpen] = useState(false);
 
@@ -50,7 +49,9 @@ const DemoMining = () => {
       setMiningPlans(response.data);
     },
     (error) => {
-      toast.error("Failed to get mining plans");
+      if (!error.response.status == 404) {
+        toast.error("Failed to get mining plans");
+      }
     }
   );
 
@@ -71,7 +72,6 @@ const DemoMining = () => {
     formData.set("duration_days", selectedPlan?.durationDays || 7);
     mutate(formData);
   };
-
 
   useEffect(() => {
     getPlans();
@@ -101,7 +101,7 @@ const DemoMining = () => {
           <Table className={"bg-[#fafafa] rounded-2xl p-[22px]"}>
             <TableHeader>
               <TableRow className={"p-[22px]"}>
-                <MTHead className={"p-[30px]"} label={"Contact"}></MTHead>
+                <MTHead className={"p-[30px]"} label={"Contract"}></MTHead>
                 <MTHead className={"p-[30px]"} label={"Price"}></MTHead>
                 <MTHead className={"p-[22px]"} label={"My Hashpower"}></MTHead>
                 <MTHead label={"Start date"}></MTHead>

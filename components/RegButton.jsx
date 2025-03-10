@@ -8,17 +8,18 @@ const RegButton = ({
   onClick = () => {},
   full = false,
   isLoading = false,
+  isDisabled=false
 }) => {
   if (isLoading) {
     return <CircleSpinner />;
   }
   return (
     <button
-      className={`capitalize  cursor-pointer bg-darkmuted text-white text-[14px] font-medium ${
+      className={`capitalize  cursor-pointer bg-darkmuted text-white text-[14px]  font-medium ${
         full ? "w-full" : "w-[190px]"
-      } rounded-[12px] py-[12px] disabled:opacity-45 disabled:cursor-pointer`}
+      } rounded-[12px] py-[12px] disabled:opacity-45 disabled:cursor-not-allowed`}
       onClick={onClick}
-      disabled={isLoading}
+      disabled={isLoading || isDisabled}
     >
       {label}
     </button>

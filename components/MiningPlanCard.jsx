@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { MdInfoOutline } from "react-icons/md";
 import { RiApps2AddLine } from "react-icons/ri";
 import PlanCard from "./PlanCard";
+import { useRouter } from "next/navigation";
 
 const MiningPlanCard = ({
   name,
@@ -15,8 +16,34 @@ const MiningPlanCard = ({
   contract_duration_days,
   discount_percentage,
   availability_percentage,
+  least_entry_amount_usdt,
+  id,
 }) => {
+  const [hashPowerValue, setHashPowerValue] = useState(parseFloat(hashpower));
+  const [rangeValue, setRangeValue] = useState(0);
+  const router = useRouter();
+  const [quantity, setQuantity] = useState(1);
 
+  const [entryAmount, setEntryAmount] = useState(least_entry_amount_usdt);
+
+  const handleRangeValueChanged = (e) => {
+    const newValue = Number(e.target.value);
+
+    const difference = newValue - rangeValue;
+    const newHashPowerValue = hashPowerValue + difference;
+    setHashPowerValue(newHashPowerValue);
+
+    setRangeValue(newValue);
+
+    const costPerHash =
+      parseFloat(least_entry_amount_usdt) / parseFloat(hashpower);
+
+    setEntryAmount(newHashPowerValue * costPerHash);
+  };
+
+  const handleOrderNowClicked = () => {
+    router.push(`/account/payment?id=${id}&hashpower=${hashPowerValue}&q=${quantity}&p=${entryAmount}`);
+  };
   return (
     <div className="bg-white flex flex-col gap-[12px] relative overflow-hidden max-w-[288px] min-w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px] shrink-0">
       <div className="flex flex-row justify-between mb-[8px]">
@@ -36,11 +63,11 @@ const MiningPlanCard = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-3 items-center gap-[14px] mb-[8px] min-h-[31px]">
+      <div className="flex flex-row flex-wrap items-center gap-[14px] mb-[8px] min-h-[31px]">
         <p className="text-[24px] font-bold text-left text-darkmuted">
-          ${parseFloat(price)}
+          ${parseFloat(entryAmount)}
         </p>
-        <div className="bg-[#ececec] w-[1px] self-stretch"></div>
+        {/* <div className="bg-[#ececec] w-[1px] self-stretch"></div> */}
         <div>
           <p className="text-[10px] text-darkmuted font-medium mb-[2px] whitespace-nowrap">
             Estimated profit
@@ -52,7 +79,10 @@ const MiningPlanCard = ({
         </div>
       </div>
 
-      <button className="bg-[#815aac] text-white text-[16px] cursor-pointer rounded-[12px] font-medium py-[12px]">
+      <button
+        className="bg-[#815aac] text-white text-[16px] cursor-pointer rounded-[12px] font-medium py-[12px]"
+        onClick={handleOrderNowClicked}
+      >
         ORDER NOW
       </button>
 
@@ -66,7 +96,7 @@ const MiningPlanCard = ({
         </div>
         <div className="flex-[1_1]">
           <p className="text-[14px] text-textgrey text-center font-medium">
-            {parseFloat(hashpower)} th/s
+            {parseFloat(hashPowerValue)} th/s
           </p>
         </div>
       </div>
@@ -78,9 +108,9 @@ const MiningPlanCard = ({
           type="range"
           name=""
           min={0}
-          max={99}
+          max={1000}
           step={1}
-          defaultValue={0}
+          value={rangeValue}
           className="w-full appearance-none bg-grey300 h-[5px] rounded-lg 
                 [&::-webkit-slider-thumb]:appearance-none 
                 [&::-webkit-slider-thumb]:w-3
@@ -94,6 +124,7 @@ const MiningPlanCard = ({
                 [&::-moz-range-thumb]:rounded-full 
                 [&::-moz-range-thumb]:cursor-pointer"
           id=""
+          onChange={handleRangeValueChanged}
         />
       </div>
 
@@ -133,7 +164,7 @@ const MiningPlanCard = ({
         <div className="relative w-full h-3 rounded-full bg-gray-200 overflow-hidden">
           {/* Progress bar */}
           <div
-            className="h-full bg-gradient-to-r from-purple-600 to-purple-300 transition-all duration-300"
+            className="h-full bg-gradient-to-r from-purple500 to-purple500 transition-all duration-300"
             style={{ width: `${availability_percentage}%` }}
           ></div>
 
