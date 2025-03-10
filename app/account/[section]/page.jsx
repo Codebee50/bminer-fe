@@ -3,7 +3,7 @@ import Home from "@/sections/account/Home";
 import SectionWrapper from "@/components/SectionWrapper";
 import TopNav from "@/components/TopNav";
 import { useParams } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BuyHashpower from "@/sections/account/BuyHashpower";
 import Footer from "@/components/Footer";
 import DemoMining from "@/sections/account/DemoMining";
@@ -16,6 +16,11 @@ import RightSider from "@/components/RightSider";
 import BtcWallet from "@/sections/account/settings/BtcWallet";
 import Notifications from "@/sections/account/Notifications";
 import PaymentSection from "@/sections/account/PaymentSection";
+import useFetchRequest from "@/hooks/useFetch";
+import { makeApiUrl } from "@/constants/beroute";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setDashboard } from "@/features/auth/authSlice";
 
 const getSection = (currentSection) => {
   if (currentSection == "buy-hashpower") {
@@ -51,6 +56,23 @@ const getSection = (currentSection) => {
 
 const Page = () => {
   const { section } = useParams();
+  const dispatch = useDispatch();
+
+  const { mutate: getDashboard, isLoading: isGettingDashboard } =
+    useFetchRequest(
+      makeApiUrl("/api/v1/dashboard/my-dashboard/"),
+      (response) => {
+        // setDashboard(response.data)
+        dispatch(setDashboard(response.data));
+      },
+      (error) => {
+        toast.error("Error fetching dashboard");
+      }
+    );
+
+  useEffect(() => {
+    getDashboard();
+  }, []);
 
   return (
     <AuthProtected>

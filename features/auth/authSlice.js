@@ -8,6 +8,7 @@ const initialState = {
   error: null,
   success: false,
   isAuthenticated: !!Cookies.get("userToken"),
+  dashboard: null,
 };
 
 const authSlice = createSlice({
@@ -18,7 +19,11 @@ const authSlice = createSlice({
       state.userInfo = payload;
       state.isAuthenticated = payload ? true : false;
 
-      console.log('credentials set successfully')
+      console.log("credentials set successfully");
+    },
+
+    setDashboard: (state, { payload }) => {
+      state.dashboard = payload;
     },
 
     logout: (state) => {
@@ -35,5 +40,5 @@ const authSlice = createSlice({
   extraReducers: (builder) => {},
 });
 
-export const { setCredentials, logout } = authSlice.actions;
+export const { setCredentials, logout, setDashboard } = authSlice.actions;
 export default authSlice.reducer;
