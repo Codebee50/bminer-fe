@@ -15,7 +15,6 @@ import { LuPencilLine } from "react-icons/lu";
 import { TbGraph } from "react-icons/tb";
 import { LuBellRing } from "react-icons/lu";
 
-
 export const navList = [
   {
     label: "% SALE",
@@ -88,7 +87,8 @@ export const secondaryMenuItems = [
     id: 4,
     name: "Feedback",
     icon: LuPencilLine,
-    path: "/contracts",
+    path: "https://docs.google.com/document/d/1UvDq8nvPY9s5zhJ8VQrYGCv6TNlKDi26WfRpaQosZNM/edit?usp=sharing",
+    newTab: true,
   },
 ];
 

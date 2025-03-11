@@ -1,15 +1,5 @@
 import RevenueStat from "@/components/RevenueStat";
 import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import MTHead from "@/components/MTHead";
 import RevenueStatList from "@/components/RevenueStatList";
 import BalanceOffer from "@/components/BalanceOffer";
 import ActivePlans from "@/components/ActivePlans";

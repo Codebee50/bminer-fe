@@ -15,6 +15,8 @@ const RightSider = () => {
                 className="flex flex-row items-center gap-4 rounded-[6px] py-[10px] px-[20px] transition-all delay-75 text-[18px] hover:bg-faintpurple hover:font-semibold"
                 key={menuItem.name}
                 href={menuItem.path}
+                target={menuItem?.newTab ? "_blank" : "_self"}
+                rel={menuItem?.newTab ? "noopener noreferrer" : undefined}
               >
                 <menuItem.icon size={25} />
                 <p className="whitespace-nowrap">{menuItem.name}</p>
