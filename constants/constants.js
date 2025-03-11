@@ -18,7 +18,7 @@ import { LuBellRing } from "react-icons/lu";
 export const navList = [
   {
     label: "% SALE",
-    link: "/",
+    link: "/cloud-mining",
   },
   {
     label: "Cloud Mining",

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logonew.svg";
 import { navList } from "@/constants/constants";
 import { FiUser } from "react-icons/fi";
 import SectionWrapper from "./SectionWrapper";
@@ -13,6 +13,8 @@ import { logout as logoutUser } from "@/features/auth/authSlice";
 import { useRouter } from "next/navigation";
 import CircleSpinner from "./CircleSpinner";
 import Cookies from "js-cookie";
+import Image from "next/image";
+import Link from "next/link";
 
 const TopNav = () => {
   const { userInfo, isAuthenticated } = useSelector((state) => state.auth);
@@ -35,13 +37,19 @@ const TopNav = () => {
       logout({ refresh });
     }
   };
+
   return (
     <div className="w-full sticky top-0 z-20 bg-white">
       <SectionWrapper pad={false}>
         <div className="w-full py-3 flex flex-row items-center justify-between bg-white border-b-[0.4px]">
-          <a href="/">
-            <img src={logo.src} alt="Bitcoinminer" />
-          </a>
+          <Link href="/">
+            <Image
+              src={"/logo.svg"}
+              height={200}
+              width={200}
+              className="w-[140px]"
+            />
+          </Link>
 
           <div className="flex flex-row items-center gap-7 max-xl:hidden">
             {navList.map((navItem) => {
