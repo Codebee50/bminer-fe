@@ -5,8 +5,9 @@ import { MdInfoOutline } from "react-icons/md";
 import { RiApps2AddLine } from "react-icons/ri";
 import PlanCard from "./PlanCard";
 import { useRouter } from "next/navigation";
+import QuantityInput from "./QuantityInput";
 
-const MiningPlanCard = ({
+const SaleMiningPlanCard = ({
   name,
   tier,
   hashpower,
@@ -52,6 +53,10 @@ const MiningPlanCard = ({
       `/account/payment?id=${id}&hashpower=${hashPowerValue}&q=${quantity}&p=${entryAmount}`
     );
   };
+
+  const handleQuantityChanged = (value) => {
+    setQuantity(value);
+  };
   return (
     <div className="bg-white flex flex-col gap-[12px] relative overflow-hidden max-w-[288px] min-w-[288px] flex-[1_1] py-[24px] px-[16px] border border-[#ececec] rounded-[20px] shrink-0">
       <div className="flex flex-row justify-between mb-[8px]">
@@ -69,6 +74,10 @@ const MiningPlanCard = ({
             </div>
           )}
         </div>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <QuantityInput onChange={handleQuantityChanged} />
       </div>
 
       <div className="flex flex-row flex-wrap items-center gap-[14px] mb-[8px] min-h-[31px]">
@@ -136,20 +145,6 @@ const MiningPlanCard = ({
         />
       </div>
 
-      <div className="w-full flex flex-row justify-between items-center">
-        <p className="text-[10px] text-[#5b5b5b] font-medium">
-          Discount on volume:
-        </p>
-        <p className="text-[11px] font-bold">
-          {parseInt(discount_percentage)}%
-        </p>
-      </div>
-
-      <div className="w-full flex flex-row justify-between items-center">
-        <p className="text-[10px] text-[#5b5b5b] font-medium">Saved:</p>
-        <p className="text-[11px] font-bold">$ 3.4</p>
-      </div>
-
       <div className="flex flex-row items-center text-[#815aac] font-semibold gap-2">
         <RiApps2AddLine size={20} />
         <p>ROI Calculator</p>
@@ -186,4 +181,4 @@ const MiningPlanCard = ({
   );
 };
 
-export default MiningPlanCard;
+export default SaleMiningPlanCard;

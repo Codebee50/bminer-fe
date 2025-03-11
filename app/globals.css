@@ -32,6 +32,7 @@
   --color-fivebgrey: #5b5b5b;
   --color-purple400: rgba(142, 97, 191, 0.051);
   --color-purple500: #815aac;
+  --color-greygreen: rgba(54, 148, 141, 0.2);
 
   --background-image-banner: url("/herobanner.jpg");
   --background-refimg: url("/refimg.png");
