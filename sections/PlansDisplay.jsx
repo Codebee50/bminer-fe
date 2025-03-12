@@ -1,4 +1,5 @@
 import MiningPlanCard from "@/components/MiningPlanCard";
+import PlanList from "@/components/PlanList";
 import SectionWrapper from "@/components/SectionWrapper";
 import React from "react";
 
@@ -14,12 +15,7 @@ const PlansDisplay = () => {
           tomorrow with your first payout!
         </p>
 
-        <div className="flex flex-row gap-[16px] mt-20 overflow-x-scroll no-scrollbar">
-          <MiningPlanCard />
-          <MiningPlanCard />
-          <MiningPlanCard />
-          <MiningPlanCard />
-        </div>
+        <PlanList category="classic"/>
       </div>
     </SectionWrapper>
   );

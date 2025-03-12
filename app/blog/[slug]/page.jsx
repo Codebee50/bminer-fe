@@ -97,7 +97,7 @@ const page = () => {
 
                 <div className="flex flex-row items-center gap-2 text-darkmuted opacity-50">
                   <p className="text-primaryPurple">•</p>
-                  <p>0 comments</p>
+                  <p>{post?.comments?.length} comments</p>
                 </div>
               </div>
             </div>

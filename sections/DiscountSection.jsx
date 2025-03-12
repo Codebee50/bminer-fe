@@ -1,5 +1,6 @@
 import MiningPlanCard from "@/components/MiningPlanCard";
 import PlanCard from "@/components/PlanCard";
+import PlanList from "@/components/PlanList";
 import SectionWrapper from "@/components/SectionWrapper";
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
@@ -18,15 +19,7 @@ const DiscountSection = () => {
 
           </div>
 
-          <div className="w-full flex flex-row overflow-x-scroll no-scrollbar gap-[16px]">
-            <MiningPlanCard/>
-            <MiningPlanCard/>
-            <MiningPlanCard/>
-            <MiningPlanCard/>
-            <MiningPlanCard/>
-            <MiningPlanCard/>
-
-          </div>
+          <PlanList category="classic"/>
         </div>
       </SectionWrapper>
     </section>
