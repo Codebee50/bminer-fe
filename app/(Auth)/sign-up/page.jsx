@@ -37,6 +37,7 @@ const Page = () => {
       toast.success(
         "Your account has been successfully created. Please check your email for verification instructions."
       );
+      // cha
     },
     (error) => {
       toast.error(handleGenericError(error));
