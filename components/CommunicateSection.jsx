@@ -13,7 +13,7 @@ const CommunicateSection = ({ title, image, points = [], reverse = false }) => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Image */}
-          <div className={`relative aspect-square bg-gradient-to-br  rounded-3xl overflow-hidden ${reverse && 'order-last'}`}>
+          <div className={`relative aspect-square bg-gradient-to-br  rounded-3xl overflow-hidden ${reverse && 'md:order-last'}`}>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative w-[420px] h-[420px] rounded-[24px] overflow-hidden ">
                 <Image

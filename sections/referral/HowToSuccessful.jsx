@@ -58,14 +58,14 @@ const HowToSuccessful = () => {
   ];
 
   return (
-    <SectionWrapper>
-      <div className="flex flex-col">
+    <SectionWrapper pad={false}>
+      <div className="flex flex-col ">
         <h1 className="text-darkmuted text-[40px] font-semibold text-center">
           How to become a successful affiliate?
         </h1>
 
         {sectionList.map((section) => (
-          <CommunicateSection {...section} />
+          <CommunicateSection {...section} key={section.title}/>
         ))}
       </div>
     </SectionWrapper>

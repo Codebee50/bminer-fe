@@ -70,7 +70,7 @@ const HowDoesCalculator = () => {
         </p>
 
         {hashrateInfo.map((info) => (
-          <div className="flex flex-row items-center gap-3">
+          <div className="flex flex-row items-center gap-3" key={info}>
             <div className="h-[20px] w-[20px] rounded-full bg-yellow100"></div>
             <p className="text-[20px] text-[#5b5b5b]">{info}</p>
           </div>
@@ -91,7 +91,7 @@ const HowDoesCalculator = () => {
 
       <section className="w-full flex flex-col mt-[100px]">
         {miningMetrics.map((metric) => (
-          <MiningMetric {...metric} key={metric.formula}/>
+          <MiningMetric {...metric} key={metric.formula} />
         ))}
       </section>
     </SectionWrapper>
