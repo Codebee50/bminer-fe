@@ -72,6 +72,51 @@ body {
     );
   }
 
+  .styles_input__5Stoe {
+    height: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .styles_wrapper__9_znm {
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 150px) minmax(0, 348px);
+    grid-template-rows: minmax(66px, auto);
+  }
+
+  .styles_container__X66JH {
+    background: #815aac;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto 1px auto;
+    grid-gap: 30px;
+    gap: 30px;
+    padding: 10px 30px;
+  }
+
+  .styles_container__divider__SimZO {
+    width: 1px;
+    background: hsla(0, 0%, 100%, 0.25);
+    align-self: stretch;
+  }
+
+  .cus-grad {
+    background: linear-gradient(180deg, #6835a0, #3f1d65);
+  }
+
+  /* input[type="range" i] {
+    appearance: auto;
+    cursor: default;
+    padding: initial;
+    border: initial;
+    margin: 2px;
+  } */
+
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
   }
