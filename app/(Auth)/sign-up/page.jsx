@@ -37,7 +37,6 @@ const Page = () => {
       toast.success(
         "Your account has been successfully created. Please check your email for verification instructions."
       );
-      router.push(`/confirm-registration?e=${response?.data?.user?.email}`);
     },
     (error) => {
       toast.error(handleGenericError(error));
