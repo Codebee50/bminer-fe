@@ -4,6 +4,7 @@ import PopularPosts from "@/components/PopularPosts";
 import PostCard from "@/components/PostCard";
 import SectionWrapper from "@/components/SectionWrapper";
 import TopNav from "@/components/TopNav";
+import { makeApiUrl } from "@/constants/beroute";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
@@ -28,7 +29,9 @@ const Page = () => {
       <TopNav />
       <SectionWrapper pad={false}>
         <div className="flex flex-row items-center gap-3 pt-4 font-medium">
-          <a className="text-[#5b5b5b]" href="/">Home</a>
+          <a className="text-[#5b5b5b]" href="/">
+            Home
+          </a>
           <div className="bg-[#b3b3b3] w-[1px] h-[18px]"></div>
           <a className="text-darkmuted">Blog</a>
         </div>
@@ -66,15 +69,16 @@ const Page = () => {
               <h2 className="text-4xl font-medium">{highlightedPost?.title}</h2>
               <p className="text-xl">{highlightedPost?.subtitle}</p>
 
-              <button className="border border-black rounded-lg text-darkmuted bg-transparent py-[12px] w-[190px]">
+              <a className="border border-black rounded-lg text-darkmuted bg-transparent py-[12px] w-[190px] text-center" href={`/blog/${highlightedPost?.slug}`}>
                 Read more
-              </button>
+              </a>
             </div>
 
-            <div className="flex-[1_1] rounded-[24px] overflow-hidden bg-red-500">
+            <div className="flex-[1_1] rounded-[24px] overflow-hidden">
               <img
-                src="https://1bitup.com/_next/image?url=https%3A%2F%2Fapi.1bitup.com%2Fuploads%2Fblog%2F%D1%81loud-mining-vocabulary.jpg&w=3840&q=75"
-                alt=""
+                src={highlightedPost?.featured_image}
+                alt="Featured post"
+                className="w-full h-[350px] object-cover object-center"
               />
             </div>
           </div>

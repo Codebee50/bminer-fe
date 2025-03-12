@@ -4,15 +4,15 @@ import { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 import axios from "axios";
 import { BsArrowLeft } from "react-icons/bs";
-import { BsArrowRight } from "react-icons/bs";P
+import { BsArrowRight } from "react-icons/bs";
+import { makeApiUrl } from "@/constants/beroute";
 
 const PopularPosts = ({ heading = "Popular posts" }) => {
   const [blogPosts, setBlogPosts] = useState([]);
   const getBlogs = async () => {
-    const response = await axios.get("http://localhost:8000/api/v1/api/posts/");
-    console.log("the response is", response);
+    const response = await axios.get(makeApiUrl("/api/v1/api/posts/popular/"));
     if (response.status == 200) {
-      setBlogPosts(response.data.results);
+      setBlogPosts(response.data);
     }
   };
 
@@ -36,6 +36,7 @@ const PopularPosts = ({ heading = "Popular posts" }) => {
               {...post}
               author_name={post.author.name}
               key={post.title}
+              featured_image={makeApiUrl(post?.featured_image)}
             />
           );
         })}
