@@ -34,16 +34,16 @@ export const navList = [
   },
   {
     label: "FAQ",
-    link: "/",
+    link: "/faq",
   },
 
   {
     label: "Referral",
-    link: "/",
+    link: "/referral",
   },
   {
     label: "Contact",
-    link: "/",
+    link: "/contact",
   },
 ];
 

@@ -18,6 +18,8 @@ const Page = () => {
       <HowItWorks />
       <ExclusiveTwelve/>
 
+      {/* TODO: add last section */}
+
       <Footer />
     </div>
   );
