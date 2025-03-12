@@ -13,6 +13,7 @@ import { useSearchParams } from "next/navigation";
 import { handleGenericError } from "@/utils/errorHandler";
 import CountdownTimer from "@/components/CountdownTimer";
 import usePostRequest from "@/hooks/usePost";
+import { useRouter } from "next/navigation";
 
 const CryptoWallet = ({ cryptoPrices }) => {
   const [hasAgreed, setHasAgreed] = useState(false);
@@ -20,6 +21,7 @@ const CryptoWallet = ({ cryptoPrices }) => {
   const searchParams = useSearchParams();
 
   const [confirmPayment, setConfirmPayment] = useState(false);
+  const router = useRouter()
 
   const [addresses, setAddresses] = useState([]);
   const [uniqueWalletTypes, setUniqueWalletTypes] = useState([]);
@@ -57,6 +59,8 @@ const CryptoWallet = ({ cryptoPrices }) => {
     makeApiUrl(`/api/v1/dashboard/plans/purchase/${searchParams.get("id")}/`),
     (response) => {
       toast.success("Plan purchased successfully");
+      router.push("/account/my-contracts");
+
     },
     (error) => {
       toast.error(handleGenericError(error));

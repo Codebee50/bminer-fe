@@ -50,7 +50,7 @@ const BalancePayment = ({ cryptoPrices }) => {
     makeApiUrl(`/api/v1/dashboard/plans/purchase/${searchParams.get("id")}/`),
     (response) => {
       toast.success("Plan purchased successfully");
-      router.push("/accounts/my-contracts");
+      router.push("/account/my-contracts");
     },
     (error) => {
       toast.error(handleGenericError(error));

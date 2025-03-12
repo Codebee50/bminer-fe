@@ -48,6 +48,7 @@ const TopNav = () => {
               height={200}
               width={200}
               className="w-[140px]"
+              alt="Bitcoin minnner"
             />
           </Link>
 

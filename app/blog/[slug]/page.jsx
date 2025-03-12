@@ -11,16 +11,15 @@ import { FaRegEye } from "react-icons/fa";
 import { TiThumbsDown, TiThumbsUp } from "react-icons/ti";
 import { FaRegStar } from "react-icons/fa";
 import PostCard from "@/components/PostCard";
-import { makeAbsoluteImageUrl } from "@/constants/beroute";
+import { makeAbsoluteImageUrl, makeApiUrl } from "@/constants/beroute";
+import BlogComment from "@/components/BlogComment";
 
 const page = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
 
   const getPost = async () => {
-    const response = await axios.get(
-      `http://localhost:8000/api/v1/api/posts/${slug}/`
-    );
+    const response = await axios.get(makeApiUrl(`/api/v1/api/posts/${slug}/`));
     if (response.status == 200) {
       console.log(response.data);
       setPost(response.data);
@@ -75,7 +74,7 @@ const page = () => {
             />
           </div>
 
-          <div className="w-full flex flex-row gap-[100px] mt-5">
+          <div className="w-full flex max-lg:flex-col-reverse flex-row gap-[20px] lg:gap-[100px] mt-5 w-full">
             <div className="flex flex-col gap-5">
               <div
                 className="w-full text-[16px] text-darkmuted leading-8"
@@ -103,7 +102,7 @@ const page = () => {
               </div>
             </div>
 
-            <div className="bg-[#f8f8f8] flex flex-col rounded-[24px] p-[25px] gap-[15px] max-w-[380px] min-w-[380px] ">
+            <div className="bg-[#f8f8f8] flex flex-col rounded-[24px] p-[25px] gap-[15px] w-full lg:max-w-[380px] min-w-[380px] ">
               <div className="flex flex-row gap-5 w-full">
                 <img
                   src={post?.author?.profile_picture}
@@ -139,35 +138,27 @@ const page = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col gap-5 mt-[50px]">
-            <p className="text-[40px] font-medium text-darkmuted">
-              You may also like
-            </p>
+          {post?.related?.post.length > 0 && (
+            <div className="w-full flex flex-col gap-5 mt-[50px]">
+              <p className="text-[40px] font-medium text-darkmuted">
+                You may also like
+              </p>
 
-            <div className="w-full grid grid-cols-3 gap-5 justify-start items-start mt-2">
-              {post?.related_posts?.map((post) => {
-                return (
-                  <PostCard
-                    {...post}
-                    author_name={post.author.name}
-                    key={post.title}
-                  />
-                );
-              })}
+              <div className="w-full grid grid-cols-3 gap-5 justify-start items-start mt-2">
+                {post?.related_posts?.map((post) => {
+                  return (
+                    <PostCard
+                      {...post}
+                      author_name={post.author.name}
+                      key={post.title}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="flex flex-col mt-10">
-            <p className="text-darkmuted text-[24px] font-semibold">
-              Leave a comment
-            </p>
-            <input
-              type="text"
-              name=""
-              className="w-full rounded-[24px] mt-5 p-[20px] min-h-[172px] border border-[#e2e2e2] bg-white"
-              id=""
-            />
-          </div>
+          <BlogComment post={post} />
         </div>
       </SectionWrapper>
       <Footer />

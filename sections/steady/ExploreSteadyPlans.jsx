@@ -17,7 +17,7 @@ const ExploreSteadyPlans = () => {
             </h1>
           </div>
 
-          <PlanList />
+          <PlanList category="steady" />
         </div>
       </SectionWrapper>
     </section>

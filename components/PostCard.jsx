@@ -1,19 +1,30 @@
 import React from "react";
 import { FaRegEye } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { BASE_BE_URL } from "@/constants/beroute";
 
-const PostCard = ({ title, author_name, view_count, slug, read_time }) => {
-  const router = useRouter()
-  const handleCardClicked= ()=>{
-      router.push(`/blog/${slug}`)
-  }
+const PostCard = ({
+  title,
+  author_name,
+  view_count,
+  slug,
+  read_time,
+  featured_image,
+}) => {
+  const router = useRouter();
+  const handleCardClicked = () => {
+    router.push(`/blog/${slug}`);
+  };
   return (
-    <div key={title} className="w-full flex flex-col gap-3" href={`/blog/${slug}`} onClick={handleCardClicked}>
+    <div
+      key={title}
+      className="w-full flex flex-col gap-3 cursor-pointer"
+      href={`/blog/${slug}`}
+      onClick={handleCardClicked}
+    >
       <img
         className="w-full h-[204px] rounded-lg object-cover object-center"
-        src={
-          "https://1bitup.com/_next/image?url=https%3A%2F%2Fapi.1bitup.com%2Fuploads%2Fblog%2Fwhat-is-ethereum.jpg&w=3840&q=75"
-        }
+        src={featured_image}
         alt=""
       />
       <p>

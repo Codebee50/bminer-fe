@@ -10,7 +10,7 @@ import { makeApiUrl } from "@/constants/beroute";
 const LatestNewsSection = ({ heading = "Latest news" }) => {
   const [blogPosts, setBlogPosts] = useState([]);
   const getBlogs = async () => {
-    const response = await axios.get(makeApiUrl("/api/v1/blog/posts/"));
+    const response = await axios.get(makeApiUrl("/api/v1/api/posts/"));
     console.log("the response is", response);
     if (response.status == 200) {
       setBlogPosts(response.data.results);
