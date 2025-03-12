@@ -9,6 +9,7 @@ import ProfitCalculator from "@/components/ProfitCalculator";
 import Footer from "@/components/Footer";
 import CloudMiningSteps from "@/sections/cloud-mining/CloudMiningSteps";
 import FAQSection from "@/sections/FaqSection";
+import HashRatePlans from "@/sections/cloud-mining/HashRatePlans";
 const Page = () => {
   return (
     <div className="w-full flex flex-col items-center">
@@ -20,6 +21,7 @@ const Page = () => {
       <CloudMiningPlans />
       <ProfitCalculator />
       <CloudMiningSteps />
+      <HashRatePlans/>
       <div className="w-full bg-[#f8f8f8]">
         <FAQSection />
       </div>
