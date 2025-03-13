@@ -4,6 +4,7 @@ import ExclusiveTwelve from "@/sections/steady/ExclusiveTwelve";
 import ExploreSteadyPlans from "@/sections/steady/ExploreSteadyPlans";
 import HowItWorks from "@/sections/steady/HowItWorks";
 import PlanGuarantee from "@/sections/steady/PlanGuarantee";
+import StableBottom from "@/sections/steady/StableBottom";
 import SteadyHero from "@/sections/steady/SteadyHero";
 import React from "react";
 
@@ -16,11 +17,11 @@ const Page = () => {
       <PlanGuarantee />
       <ExploreSteadyPlans />
       <HowItWorks />
-      <ExclusiveTwelve/>
+      <ExclusiveTwelve />
 
-      {/* TODO: add last section */}
+      <StableBottom />
 
-      <Footer />
+      <Footer marginTop={false} />
     </div>
   );
 };
