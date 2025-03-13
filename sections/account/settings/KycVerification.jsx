@@ -46,17 +46,6 @@ const KycVerification = () => {
     },
   ];
 
-  const { mutate, isLoading } = usePostRequest(
-    makeApiUrl("/api/v1/auth/kyc/"),
-    (response) => {
-      toast.success("Kyc documents submitted successfully");
-    },
-    (error) => {
-      toast.error(handleGenericError(error));
-    },
-    "multipart/form-data"
-  );
-
   const { mutate: getKyc, isLoading: isGettingKyc } = useFetchRequest(
     makeApiUrl("/api/v1/auth/kyc/"),
     (response) => {
@@ -68,6 +57,18 @@ const KycVerification = () => {
         toast.error("Failed to get current kyc configurations");
       }
     }
+  );
+
+  const { mutate, isLoading } = usePostRequest(
+    makeApiUrl("/api/v1/auth/kyc/"),
+    (response) => {
+      toast.success("Kyc documents submitted successfully");
+      getKyc();
+    },
+    (error) => {
+      toast.error(handleGenericError(error));
+    },
+    "multipart/form-data"
   );
 
   const handleFormSubmitted = (e) => {
