@@ -104,6 +104,18 @@ html {
     padding: 10px 30px;
   }
 
+  .styles_wrapper___ZLtP {
+    width: 100%;
+    background: linear-gradient(180deg, #6835a0, #3f1d65);
+    border-radius: 24px;
+    padding: 60px 60px 55px;
+    display: grid;
+    grid-template-columns: minmax(0, 462px) minmax(0, 482px);
+    justify-content: space-between;
+    grid-gap: 30px;
+    gap: 30px;
+  }
+
   .styles_container__divider__SimZO {
     width: 1px;
     background: hsla(0, 0%, 100%, 0.25);

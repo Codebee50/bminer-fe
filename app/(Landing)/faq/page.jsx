@@ -2,6 +2,7 @@ import React from "react";
 import FAQSection from "@/sections/FaqSection";
 import TopNav from "@/components/TopNav";
 import Footer from "@/components/Footer";
+import FaqContactSection from "@/sections/FaqContactSection";
 
 const page = () => {
   const faqList = [
@@ -77,6 +78,8 @@ const page = () => {
       <div className="w-full bg-[#f8f8f8]">
         <FAQSection faqs={faqList} doubleCols={false} />
       </div>
+
+      <FaqContactSection />
 
       <Footer />
     </div>
