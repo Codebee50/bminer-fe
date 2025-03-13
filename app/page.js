@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import FAQSection from "@/sections/FaqSection";
 import { faqs } from "@/constants/constants";
 import SimpleBitcoinMining from "@/sections/SimpleBitcoinMining";
+import BitcoinMiningComparison from "@/sections/ComparisonCharts";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <FAQSection faqs={faqs} />
       </div>
 
+      <BitcoinMiningComparison />
       <SectionWrapper pad={false}>
         <LatestNewsSection heading="Latest news" />
       </SectionWrapper>
