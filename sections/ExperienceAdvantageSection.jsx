@@ -4,7 +4,7 @@ import React from "react";
 const ExperienceAdvantageSection = () => {
   return (
     <SectionWrapper pad={false}>
-      <h2 className="text-[30px] sm:text-[40px] text-[#373737] font-semibold text-center mt-[200px]  max-br1270:mt-[50px]">
+      <h2 className="text-[30px] sm:text-[40px] text-[#373737] font-semibold text-center mt-[250px]  max-br1270:mt-[50px]">
         Experience the advantages of our Bitcoinminer Cloud Mining company
       </h2>
       <div className="flex w-full lg:h-[570px] gap-[30px] mt-5 max-lg:flex-col">

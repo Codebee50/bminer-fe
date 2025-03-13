@@ -15,7 +15,22 @@ const PlansDisplay = () => {
           tomorrow with your first payout!
         </p>
 
-        <PlanList category="classic"/>
+        <PlanList category="classic" />
+
+        <div className="w-full flex flex-row gap-2 mt-10 max-lg:hidden">
+          <a
+            href="/cloud-mining"
+            className="border border-darkmuted font-medium rounded-[12px] p-[12px] w-full text-[16px] cursor-pointer text-center"
+          >
+            Discover mining plans that suits you
+          </a>
+          <a
+            href="/steady"
+            className="border border-darkmuted bg-darkmuted text-white font-medium rounded-[12px] p-[12px] w-full text-[16px] cursor-pointer text-center"
+          >
+            Discover Steady plans that suits you
+          </a>
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -35,7 +35,7 @@ const PlanList = ({ category = "all" }) => {
             (cat) => cat.name == category.toLowerCase()
           ) || null;
 
-        console.log(response.data.results)
+        console.log(response.data.results);
         setRequestedCategory(requestedCategory);
       },
       (error) => {
@@ -59,7 +59,6 @@ const PlanList = ({ category = "all" }) => {
     getCategories();
   }, []);
 
-  //   TODO: fetch only steady plans
   if (isLoading || isGettingCategories) {
     return <PageLoader />;
   }
@@ -68,7 +67,7 @@ const PlanList = ({ category = "all" }) => {
       {planList
         .filter((plan) => plan.category == requestedCategory?.id)
         .map((plan) => {
-          return getComponentForPlan(plan);
+          return <div key={plan.id}>{getComponentForPlan(plan)}</div>;
         })}
     </div>
   );

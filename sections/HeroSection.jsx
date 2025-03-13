@@ -39,8 +39,8 @@ const HeroSection = () => {
               </div>
 
               <div className="flex flex-row items-center mt-4 gap-5 max-sm:flex-wrap">
-                <LandingCtaButton label="Cloud Mining" />
-                <LandingCtaButton label="Steady Mining" variant="white" />
+                <LandingCtaButton label="Cloud Mining" anchor={true} href="/cloud-mining" />
+                <LandingCtaButton label="Steady Mining" variant="white" href="/steady" anchor={true} />
               </div>
             </div>
 

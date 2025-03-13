@@ -1,8 +1,11 @@
+"use client";
 import RegButton from "@/components/RegButton";
 import SectionWrapper from "@/components/SectionWrapper";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const WhyChooseUs = () => {
+  const router = useRouter();
   const features = [
     {
       title: "Higher Profit Potential",
@@ -44,12 +47,15 @@ const WhyChooseUs = () => {
               Why choose us?
             </h3>
             <p className="text-[#5b5b5b] text-[15px] sm:text-[20px] mb-[40px]">
-              At Bitcoin miner, we focus on delivering real, measurable results. Our
-              commitment is to practical outcomes, not just theoretical
+              At Bitcoin miner, we focus on delivering real, measurable results.
+              Our commitment is to practical outcomes, not just theoretical
               promises, ensuring you see tangible success from your investment.
             </p>
 
-            <RegButton label={"Get started now"} />
+            <RegButton
+              label={"Get started now"}
+              onClick={router.push.bind(null, "/sign-up")}
+            />
           </div>
 
           <div>
@@ -67,7 +73,9 @@ const WhyChooseUs = () => {
               <div className="flex flex-col gap-[10px]" key={feature.title}>
                 <img src="/eclipse.svg" className="w-[40px]" alt="" />
                 <p className="text-darkmuted font-medium">{feature.title}</p>
-                <p className="text-[#5b5b5b] text-[16px]">{feature.description}</p>
+                <p className="text-[#5b5b5b] text-[16px]">
+                  {feature.description}
+                </p>
               </div>
             );
           })}

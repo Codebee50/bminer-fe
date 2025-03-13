@@ -47,7 +47,7 @@ const GetStarted = () => {
                 with our Bitcoin miner Cloud Mining Platform.
               </p>
 
-              <a href="Get started now" className="text-[#790bf9]">
+              <a href="/sign-up" className="text-[#790bf9]">
                 <button className="text-white bg-[#373737] text-[14px] rounded-[12px] font-medium py-[12px] w-[190px]">
                   Get Started Now
                 </button>
