@@ -24,7 +24,7 @@ const SteadyHero = () => {
 
 
               <div className="flex flex-row items-center mt-4 gap-5 max-sm:flex-wrap">
-                <LandingCtaButton label="Choose a plan" />
+                <LandingCtaButton label="Choose a plan"  anchor href="#explore-steady-plans"/>
               </div>
             </div>
           </div>

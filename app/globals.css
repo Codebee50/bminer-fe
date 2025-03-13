@@ -47,6 +47,11 @@
 
 body {
   font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer utilities {

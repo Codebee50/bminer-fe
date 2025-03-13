@@ -26,7 +26,11 @@ const BestOffersHero = () => {
               </p>
 
               <div className="flex flex-row items-center mt-4 gap-5 max-sm:flex-wrap">
-                <LandingCtaButton label="Choose a plan" />
+                <LandingCtaButton
+                  label="Choose a plan"
+                  anchor={true}
+                  href="/bestoffers#cloud-mining-offers"
+                />
               </div>
             </div>
           </div>

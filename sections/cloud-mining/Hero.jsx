@@ -34,7 +34,7 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-row items-center mt-4 gap-5 max-sm:flex-wrap">
-                <LandingCtaButton label="Sign up" onClick={router.push.bind(null, '/sign-up')} />
+                <LandingCtaButton label="Sign up" anchor href="/sign-up" />
               </div>
             </div>
 
