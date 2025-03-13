@@ -6,7 +6,7 @@ const PlanGuarantee = () => {
     <SectionWrapper>
       <div className="w-full flex flex-col">
         <h1 className="text-[30px] md:text-[48px] text-darkmuted font-semibold">
-          1Bitup Steady Plans guarantees{" "}
+          Bitcoin miner Steady Plans guarantees{" "}
           <span className="text-yellow100">fixed profits regardless</span> of
           the Bitcoin exchange rate
         </h1>
@@ -39,8 +39,8 @@ const PlanGuarantee = () => {
               team will manage it to achieve the targeted output efficiently.
             </p>
             <p className="text-fivebgrey font-normal text-[18px]">
-              At 1BitUp, we're committed to providing a stable and secure mining
-              opportunity in the dynamic world of hashing market.
+              At Bitcoin miner, we're committed to providing a stable and secure
+              mining opportunity in the dynamic world of hashing market.
             </p>
           </div>
         </div>

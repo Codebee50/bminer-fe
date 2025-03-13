@@ -4,8 +4,8 @@ import React from "react";
 const HowItWorks = () => {
   const howList = [
     {
-      title: "Sign up to 1BitUP",
-      description: "Access 1BitUp cloud mining service and Sign In",
+      title: "Sign up to Bitcoin miner",
+      description: "Access Bitcoin miner cloud mining service and Sign In",
     },
     {
       title: "Get your unique referral link",

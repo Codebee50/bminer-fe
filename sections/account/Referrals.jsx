@@ -16,7 +16,7 @@ const Referrals = () => {
   const [referral, setReferral] = useState(null);
   const steps = [
     { step: 1, text: "Copy and share your referral link with your friends" },
-    { step: 2, text: "Friends visit 1BitUp and register" },
+    { step: 2, text: "Friends visit Bitcoin miner and register" },
     { step: 3, text: "You receive rewards on all their purchases" },
   ];
 

@@ -30,7 +30,7 @@ const ContactPage = () => {
 
           <div className="flex items-center mb-12">
             <Mail className="text-purple-600 mr-3 flex-shrink-0" size={24} />
-            <p className="text-gray-600">E-mail: office@1bitup.com</p>
+            <p className="text-gray-600">E-mail: office@bitcoinminer.com</p>
           </div>
 
           {/* Social Media Icons */}

@@ -26,7 +26,7 @@ const Hero = () => {
 
               <p className="text-white text-[15px] sm:text-[20px]">
                 Do you know you can enjoy Bitcoin cloud mining plans at low
-                hashrates? Sounds good, right? Then check out 1BitUp.
+                hashrates? Sounds good, right? Then check out Bitcoin miner.
               </p>
 
               <p className="text-white text-[15px] sm:text-[20px] mt-10">

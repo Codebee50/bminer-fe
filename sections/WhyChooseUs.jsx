@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
               Why choose us?
             </h3>
             <p className="text-[#5b5b5b] text-[15px] sm:text-[20px] mb-[40px]">
-              At 1BitUp, we focus on delivering real, measurable results. Our
+              At Bitcoin miner, we focus on delivering real, measurable results. Our
               commitment is to practical outcomes, not just theoretical
               promises, ensuring you see tangible success from your investment.
             </p>

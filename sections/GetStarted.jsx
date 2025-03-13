@@ -44,7 +44,7 @@ const GetStarted = () => {
               </h2>
               <p className="text-[#5b5b5b] text-[10px] sm:text-[20px] mb-[35px] leading-[140%]">
                 Access to the world of cryptocurrencies is simpler than ever
-                with our 1BitUp Cloud Mining Platform.
+                with our Bitcoin miner Cloud Mining Platform.
               </p>
 
               <a href="Get started now" className="text-[#790bf9]">

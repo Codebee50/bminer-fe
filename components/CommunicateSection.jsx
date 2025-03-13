@@ -3,7 +3,7 @@ import { Circle } from "lucide-react";
 
 const CommunicateSection = ({ title, image, points = [], reverse = false }) => {
   const bulletPoints = [
-    "Discuss with your friends about 1BitUp Cloud mining opportunities",
+    "Discuss with your friends about Bitcoin miner Cloud mining opportunities",
     "Inform them about trends and possibilities of Cloud Mining",
     "Try to give them advice when selecting any hashpower plans",
   ];

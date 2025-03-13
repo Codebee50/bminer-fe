@@ -6,19 +6,19 @@ import Footer from "@/components/Footer";
 const page = () => {
   const faqList = [
     {
-      question: "What is 1BITUP?",
+      question: "What is Bitcoin miner?",
       answer:
-        "1BITUP is a digital assets cloud mining service that offers an easy and safe way to purchase hashpower without having to deal with hardware and software setup. We provide hashrate services and a variety of mining-related solutions to small and large-scale customers.",
+        "Bitcoin miner is a digital assets cloud mining service that offers an easy and safe way to purchase hashpower without having to deal with hardware and software setup. We provide hashrate services and a variety of mining-related solutions to small and large-scale customers.",
     },
     {
-      question: "How does hashing plan work with 1BITUP?",
+      question: "How does hashing plan work with Bitcoin miner?",
       answer:
         "It's very easy! As soon as you pass the KYC/AML procedure, you can pay for your contract, and it will be added to your profile, allowing you to start mining immediately. Depending on the blockchain algorithm you select, you can mine native digital assets. The rewards are processed every day, following 24 hours after the mining day is over.",
     },
     {
       question: "How can I contact you for more questions?",
       answer:
-        "If you have any inquiries or need to ask additional questions, feel free to reach out to 1BitUp through various communication channels. Our physical address is Trading Way FZCO, located at DSO-FZCO-21102 in Dubai Silicon Oasis. You can contact us by sending an email to [email protected]. You can also visit the 'Contact Customer Service' section on our website to leave a message. We have a dedicated support team available to assist you promptly.",
+        "If you have any inquiries or need to ask additional questions, feel free to reach out to Bitcoin miner through various communication channels. Our physical address is Trading Way FZCO, located at DSO-FZCO-21102 in Dubai Silicon Oasis. You can contact us by sending an email to [email protected]. You can also visit the 'Contact Customer Service' section on our website to leave a message. We have a dedicated support team available to assist you promptly.",
     },
     {
       question: "Where is your hashing farm located?",
@@ -53,7 +53,7 @@ const page = () => {
     {
       question: "How can I get started?",
       answer:
-        "Once you choose which coin you want to mine, you can submit your order: complete the KYC/AML procedure, go to the 'BUY HASHPOWER' section in your 1BitUp account, select your hashrate, and proceed to payment. After payment, your order should show as approved in your 1BitUp account. If this is not the case, please contact customer service through our web form or the 'Contact Customer Service' section of your account.",
+        "Once you choose which coin you want to mine, you can submit your order: complete the KYC/AML procedure, go to the 'BUY HASHPOWER' section in your Bitcoin miner account, select your hashrate, and proceed to payment. After payment, your order should show as approved in your  account. If this is not the case, please contact customer service through our web form or the 'Contact Customer Service' section of your account.",
     },
     {
       question: "Is the cost a monthly or yearly payment?",

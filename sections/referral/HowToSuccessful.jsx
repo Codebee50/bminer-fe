@@ -5,10 +5,10 @@ import React from "react";
 const HowToSuccessful = () => {
   const sectionList = [
     {
-      title: "Communicate with your friends about 1BitUP cloud mining",
+      title: "Communicate with your friends about Bitcoin miner cloud mining",
       image: "/communicate.avif",
       points: [
-        "Discuss with your friends about 1BitUp Cloud mining opportunities",
+        "Discuss with your friends about Bitcoin miner Cloud mining opportunities",
         "Inform them about trends and possibilities of Cloud Mining",
         "Try to give them advice when selecting any hashpower plans",
       ],
@@ -30,16 +30,16 @@ const HowToSuccessful = () => {
       title: "Record a video for YouTube",
       image: "/record.avif",
       points: [
-        "Create and upload your personal video review of the 1BitUp service (including referral links in the video description)",
+        "Create and upload your personal video review of the Bitcoin miner service (including referral links in the video description)",
         "Feature our official video on your channel",
-        "Create an engaging YouTube review highlighting 1BitUp's unique features, with referral links for viewers to learn more or sign up.",
+        "Create an engaging YouTube review highlighting Bitcoin miner's unique features, with referral links for viewers to learn more or sign up.",
       ],
     },
     {
       title: "Use your website",
       image: "/usewebsite.avif",
       points: [
-        "Post articles about 1BitUp",
+        "Post articles about Bitcoin miner",
         "Place our advertising banners in your website",
         "Place our text advertising banners on your website",
         "Place a calculator on your website page",

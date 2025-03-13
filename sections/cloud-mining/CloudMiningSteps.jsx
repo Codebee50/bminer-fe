@@ -35,7 +35,7 @@ export default function CloudMiningSteps() {
           </div>
 
           <p className="text-gray-600 max-w-xl">
-            Find reputable btc cloud mining firms first. While 1BitUp and
+            Find reputable btc cloud mining firms first. While Bitcoin miner and
             similar cryptocurrency platforms have shown to be trustworthy in the
             Bitcoin cloud mining industry, there are more factors to consider.
           </p>

@@ -20,7 +20,7 @@ const CloudMiningOffers = () => {
           <p className="text-[#5b5b5b] text-[20px]">
             These calculations offer forward-looking insights, enabling you to
             model potential income based on selected conditions. This
-            information is derived from data currently available to 1BitUp,
+            information is derived from data currently available to Bitcoin miner,
             including the current mining difficulty. The projections are based
             on the forecasted price of BTC. It's important to note that this
             information does not guarantee future performance and should not be

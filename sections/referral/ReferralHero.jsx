@@ -21,7 +21,7 @@ const ReferralHero = () => {
           <div className="flex max-[1270px]:flex-col justify-between gap-[64px] max-w-[700px]">
             <div className="flex flex-col justify-center relative gap-[8px] flex-[5_1_0%]">
               <h1 className="text-darkmuted text-[50px] sm:text-[60px] font-semibold">
-                1BitUP Referral Program
+                Bitcoin miner Referral Program
               </h1>
 
               <p className="text-darkmuted text-[15px] sm:text-[20px]">

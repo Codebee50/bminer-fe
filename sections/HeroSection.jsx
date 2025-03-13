@@ -28,7 +28,7 @@ const HeroSection = () => {
               <div className="mt-10 flex flex-col gap-4">
                 <LandingBullet
                   label={
-                    "Cloud Mining with 1BitUp: Benefit from reduced costs and higher returns by mining Bitcoin instead of purchasing it."
+                    "Cloud Mining with Bitcoin miner: Benefit from reduced costs and higher returns by mining Bitcoin instead of purchasing it."
                   }
                 />
                 <LandingBullet

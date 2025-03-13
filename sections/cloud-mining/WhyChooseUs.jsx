@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
           <div className="bg-purple-50 rounded-3xl p-8 relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-md">
-                You may ask, what's unique about 1BitUp? Without a doubt, we are
+                You may ask, what's unique about Bitcoin miner? Without a doubt, we are
                 the best.
               </h3>
               <p className="text-gray-600 mb-6">

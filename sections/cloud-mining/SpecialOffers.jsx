@@ -14,7 +14,7 @@ const SpecialOffers = () => {
 
           <p className="text-[24px] text-darkmuted">
             If you're looking for the best automatic cloud Bitcoin mining
-            platform to enjoy endless offers, then 1BitUp is your best bet!
+            platform to enjoy endless offers, then Bitcoin miner is your best bet!
           </p>
           <p className="text-[24px] text-darkmuted">
             So, how do you grab our special offer?``

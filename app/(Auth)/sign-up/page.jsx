@@ -138,7 +138,7 @@ const Page = () => {
                   />
 
                   <CheckboxInput
-                    label="I want to receive emails about exclusive offers from 1BitUp"
+                    label="I want to receive emails about exclusive offers from Bitcoin miner"
                     placeholder="Referral code"
                     name="newsletter_subscription"
                   />

@@ -104,7 +104,7 @@ const Footer = () => {
 
           <div className="border-t border-t-grey400 mt-7 pt-[20px]">
             <p className="text-[16px] text-[#b3b3b3]">
-              © 2025 1BITUP. All rights reserved
+              © 2025 Bitcoin miner. All rights reserved
             </p>
           </div>
         </div>
