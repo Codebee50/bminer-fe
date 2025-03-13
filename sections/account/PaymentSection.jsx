@@ -8,6 +8,8 @@ import { makeApiUrl } from "@/constants/beroute";
 import axios from "axios";
 import { toast } from "react-toastify";
 import CircleSpinner from "@/components/CircleSpinner";
+import { useSearchParams } from "next/navigation";
+import { handleGenericError } from "@/utils/errorHandler";
 
 const PaymentSection = () => {
   const [selectedSection, setSelectedSection] = useState(0);
@@ -22,6 +24,9 @@ const PaymentSection = () => {
     },
   ];
   const [cryptoPrices, setCryptoPrices] = useState(null);
+
+  const searchParams = useSearchParams();
+  const [plan, setPlan] = useState(null);
 
   const { mutate: fetchCryptoPrices, isLoading: isGettingCryptoPrices } =
     useFetchRequest(
@@ -42,13 +47,23 @@ const PaymentSection = () => {
       }
     );
 
+  const { mutate: getPlan, iLoading: isGettingPlan } = useFetchRequest(
+    makeApiUrl(`/api/v1/dashboard/plans/${searchParams.get("id")}`),
+    (response) => {
+      setPlan(response.data);
+    },
+    (error) => {
+      toast.error(handleGenericError(error));
+    }
+  );
   const sectionMapping = {
-    0: <CryptoWallet cryptoPrices={cryptoPrices} />,
-    1: <BalancePayment cryptoPrices={cryptoPrices} />,
+    0: <CryptoWallet cryptoPrices={cryptoPrices} plan={plan} />,
+    1: <BalancePayment cryptoPrices={cryptoPrices} plan={plan} />,
   };
 
   useEffect(() => {
     fetchCryptoPrices();
+    getPlan();
   }, []);
 
   return (
@@ -91,13 +106,28 @@ const PaymentSection = () => {
           <div className="w-full flex flex-col gap-[15px] flex-wrap">
             <h4 className="font-medium">Contract details</h4>
 
-            <div className="bg-white rounded-[16px] p-[20px]">
-              <div className="p-[20px] rounded-[6px] bg-purple400 flex flex-row justify-between items-center">
-                <ContractDetailStat label={"Duration"} value={"3 months"} />
-                <ContractDetailStat label={"Hashpower"} value={"30 TH/s"} />
-                <ContractDetailStat label={"Price"} value={"$ 40.65"} />
+            {isGettingPlan ? (
+              <CircleSpinner />
+            ) : (
+              <div className="bg-white rounded-[16px] p-[20px]">
+                <div className="p-[20px] rounded-[6px] bg-purple400 flex flex-row justify-between items-center">
+                  <ContractDetailStat
+                    label={"Duration"}
+                    value={`${plan?.duration_months || "-"} months`}
+                  />
+                  <ContractDetailStat
+                    label={"Hashpower"}
+                    value={`${plan?.hashpower || "-"} TH/s`}
+                  />
+                  <ContractDetailStat
+                    label={"Price"}
+                    value={`$ ${
+                      parseFloat(plan?.least_entry_amount_usdt) || "-"
+                    }`}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

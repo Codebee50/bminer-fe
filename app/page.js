@@ -10,6 +10,8 @@ import LatestNewsSection from "@/sections/LatestNewsSection";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import PlansDisplay from "@/sections/PlansDisplay";
 import Footer from "@/components/Footer";
+import FAQSection from "@/sections/FaqSection";
+import { faqs } from "@/constants/constants";
 
 export default function Home() {
   return (
@@ -21,6 +23,10 @@ export default function Home() {
       <DiscountSection />
       <WhyChooseUs />
       <PlansDisplay />
+      <div className="w-full bg-[#f8f8f8]">
+        <FAQSection faqs={faqs} />
+      </div>
+
       <SectionWrapper pad={false}>
         <LatestNewsSection heading="Latest news" />
       </SectionWrapper>
