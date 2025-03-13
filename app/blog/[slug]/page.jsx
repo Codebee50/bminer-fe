@@ -74,10 +74,10 @@ const page = () => {
             />
           </div>
 
-          <div className="w-full flex max-lg:flex-col-reverse flex-row gap-[20px] lg:gap-[100px] mt-5 w-full">
+          <div className="flex max-lg:flex-col-reverse flex-row gap-[20px] lg:gap-[100px] mt-5 w-full">
             <div className="flex flex-col gap-5">
               <div
-                className="w-full text-[16px] text-darkmuted leading-8"
+                className="w-full max-w-[700px] text-[16px] text-darkmuted leading-8"
                 dangerouslySetInnerHTML={{ __html: post?.content || "" }}
               ></div>
 
@@ -102,7 +102,7 @@ const page = () => {
               </div>
             </div>
 
-            <div className="bg-[#f8f8f8] flex flex-col rounded-[24px] p-[25px] gap-[15px] w-full lg:max-w-[380px] min-w-[380px] ">
+            <div className="bg-[#f8f8f8] h-max flex flex-col rounded-[24px] p-[25px] gap-[15px] w-full lg:max-w-[380px] min-w-[380px] ">
               <div className="flex flex-row gap-5 w-full">
                 <img
                   src={post?.author?.profile_picture}
