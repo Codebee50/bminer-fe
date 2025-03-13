@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegEye } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { BASE_BE_URL } from "@/constants/beroute";
+import { formatDate } from "@/constants/constants";
 
 const PostCard = ({
   title,
@@ -10,6 +11,7 @@ const PostCard = ({
   slug,
   read_time,
   featured_image,
+  published_date,
 }) => {
   const router = useRouter();
   const handleCardClicked = () => {
@@ -28,7 +30,9 @@ const PostCard = ({
         alt=""
       />
       <p>
-        <span className="text-[#b9b9b9] text-[14px]">14 / 01 / 2022</span>
+        <span className="text-[#b9b9b9] text-[14px]">
+          {formatDate(published_date)}
+        </span>
         <a href="/dashboard"> • {author_name}</a>
       </p>
 
