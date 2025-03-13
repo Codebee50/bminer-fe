@@ -13,10 +13,16 @@ import { FaRegStar } from "react-icons/fa";
 import PostCard from "@/components/PostCard";
 import { makeAbsoluteImageUrl, makeApiUrl } from "@/constants/beroute";
 import BlogComment from "@/components/BlogComment";
+import usePostRequest from "@/hooks/usePost";
+import { toast } from "react-toastify";
+import { handleGenericError } from "@/utils/errorHandler";
+import { formatDate } from "@/constants/constants";
+import CircleSpinner from "@/components/CircleSpinner";
 
 const page = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+  const [message, setMessage] = useState("")
 
   const getPost = async () => {
     const response = await axios.get(makeApiUrl(`/api/v1/api/posts/${slug}/`));
@@ -26,9 +32,41 @@ const page = () => {
     }
   };
 
+  const { mutate: likeUnlike, isLoading: isLiking } = usePostRequest(
+    makeApiUrl(`/api/v1/api/posts/${post?.slug}/like/`),
+    (response) => {
+      toast.success(message)
+      getPost();
+    },
+    (error) => {
+      toast.error(handleGenericError(error));
+    }
+  );
+
   useEffect(() => {
     getPost();
   }, []);
+
+  const handleLikeClick = () => {
+    if (post) {
+      setMessage('Blog post liked successfully')
+      likeUnlike({
+        likes: parseInt(post?.likes || 0) + 1,
+      });
+    }
+  };
+
+  const handleUnlikeClick = () => {
+    if (post) {
+      const likes = parseInt(post?.likes) || 0;
+      setMessage("Blog post unliked successfully")
+      if (likes > 0) {
+        likeUnlike({
+          likes: parseInt(post?.likes || 0) - 1,
+        });
+      }
+    }
+  };
 
   return (
     <section>
@@ -46,7 +84,7 @@ const page = () => {
 
         <div className="mt-[70px]">
           <div className="flex flex-row items-center gap-3 text-[18px] text-[#b9b9b9]">
-            <span className=" ">14 / 01 / 2022</span>
+            <span className=" ">{formatDate(post?.published_date)}</span>
             <a href="/dashboard" className="text-black underline capitalize">
               • {post?.author?.user?.first_name} {post?.author?.user?.last_name}
             </a>
@@ -82,18 +120,32 @@ const page = () => {
               ></div>
 
               <div className="flex flex-row gap-3">
-                <div className="w-[40px] h-[40px] rounded-full bg-purple300 text-white flex items-center justify-center">
-                  <TiThumbsUp size={20} />
-                </div>
+                {isLiking ? (
+                  <CircleSpinner />
+                ) : (
+                  <div
+                    className="w-[40px] h-[40px] rounded-full bg-purple300 text-white flex items-center justify-center cursor-pointer"
+                    onClick={handleLikeClick}
+                  >
+                    <TiThumbsUp size={20} />
+                  </div>
+                )}
 
                 <div className="flex flex-row items-center gap-2 text-darkmuted opacity-50">
                   <FaRegStar />
-                  <p>5</p>
+                  <p>{post?.likes || 0}</p>
                 </div>
 
-                <div className="w-[40px] h-[40px] rounded-full bg-purple300 text-white flex items-center justify-center">
-                  <TiThumbsDown size={20} />
-                </div>
+                {isLiking ? (
+                  <CircleSpinner />
+                ) : (
+                  <div
+                    className="w-[40px] h-[40px] rounded-full bg-purple300 text-white flex items-center justify-center"
+                    onClick={handleUnlikeClick}
+                  >
+                    <TiThumbsDown size={20} />
+                  </div>
+                )}
 
                 <div className="flex flex-row items-center gap-2 text-darkmuted opacity-50">
                   <p className="text-primaryPurple">•</p>
