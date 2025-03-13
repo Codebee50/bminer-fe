@@ -12,6 +12,7 @@ import PlansDisplay from "@/sections/PlansDisplay";
 import Footer from "@/components/Footer";
 import FAQSection from "@/sections/FaqSection";
 import { faqs } from "@/constants/constants";
+import SimpleBitcoinMining from "@/sections/SimpleBitcoinMining";
 
 export default function Home() {
   return (
@@ -30,7 +31,9 @@ export default function Home() {
       <SectionWrapper pad={false}>
         <LatestNewsSection heading="Latest news" />
       </SectionWrapper>
-      <Footer />
+
+      <SimpleBitcoinMining />
+      <Footer marginTop={false} />
     </div>
   );
 }

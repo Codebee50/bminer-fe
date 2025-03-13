@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { PiXBold } from "react-icons/pi"; // X (Twitter) icon from Phosphor Icons
 
-const Footer = () => {
+const Footer = ({ marginTop = true }) => {
   const footerLinks = [
     {
       category: "Company",
@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow mt-10">
+    <footer className={`w-full min-h-[60vh] flex flex-col bg-darkmuted border-t-[6px]  border-t-brightyellow ${marginTop && 'mt-10'}`}>
       <SectionWrapper pad={false}>
         <div className="flex flex-col pt-20">
           <div className="flex flex-row flex-wrap items-start justify-between gap-8">
