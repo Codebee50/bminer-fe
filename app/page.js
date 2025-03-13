@@ -23,7 +23,7 @@ export default function Home() {
       <DiscountSection />
       <WhyChooseUs />
       <PlansDisplay />
-      <div className="w-full bg-[#f8f8f8]">
+      <div className="w-full bg-[#f8f8f8] mt-[100px]">
         <FAQSection faqs={faqs} />
       </div>
 
