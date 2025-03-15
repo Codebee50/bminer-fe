@@ -1,6 +1,9 @@
+"use client";
 import MiningMetric from "@/components/MiningMetric";
 import SectionWrapper from "@/components/SectionWrapper";
-import React from "react";
+import useFetchRequest from "@/hooks/useFetch";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const HowDoesCalculator = () => {
   const hashrateInfo = [
@@ -45,8 +48,6 @@ const HowDoesCalculator = () => {
         "Static Cost Recovery Time = Duration Contract Fee / (Duration Static Output)",
     },
   ];
-
-  console.log(miningMetrics);
 
   return (
     <SectionWrapper pad={false}>
